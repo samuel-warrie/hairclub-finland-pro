@@ -9,24 +9,33 @@ const Index = () => {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] sm:min-h-[700px] flex items-center justify-center">
-        {/* Video Background */}
-        <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Desktop Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          style={{
+            minWidth: '100%',
+            minHeight: '100%',
+            objectPosition: '30% center',
+          }}
+        >
+          <source src="https://raw.githubusercontent.com/samuel-warrie/bg-video/main/hairclubfinland.mp4" type="video/mp4" />
+        </video>
+
+        {/* Mobile Fallback Image */}
+        <div className="md:hidden absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80"
+            alt="Hair Club Finland"
             className="w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80"
-          >
-            <source
-              src="https://videos.pexels.com/video-files/3998601/3998601-uhd_2560_1440_25fps.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 bg-primary/70" />
+          />
         </div>
+
+        <div className="absolute inset-0 bg-primary/70" />
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
