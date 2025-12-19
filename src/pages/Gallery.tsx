@@ -10,13 +10,12 @@ const Gallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Auto-play carousel
   useEffect(() => {
     if (!isPlaying || lightboxOpen) return;
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isPlaying, lightboxOpen]);
@@ -50,7 +49,6 @@ const Gallery = () => {
     setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -83,79 +81,78 @@ const Gallery = () => {
       {/* Carousel Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-8">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="label-text"
-            >
-              Featured Work
-            </motion.span>
-            <motion.h2
+          <div className="text-center mb-12">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="heading-lg mt-4"
+              className="space-y-4"
             >
-              Our Showcase
-            </motion.h2>
+              <div className="flex justify-center">
+                <div className="decorative-line" />
+              </div>
+              <span className="label-text">Featured Work</span>
+              <h2 className="heading-lg">Our Showcase</h2>
+            </motion.div>
           </div>
 
           {/* Main Carousel */}
           <div className="relative group">
-            <div className="relative aspect-[16/9] max-h-[600px] overflow-hidden rounded-xl">
+            <div className="relative aspect-[16/9] max-h-[600px] overflow-hidden bg-muted">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentIndex}
                   src={galleryImages[currentIndex].src}
                   alt={galleryImages[currentIndex].alt}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   className="w-full h-full object-cover cursor-pointer"
                   onClick={() => openLightbox(currentIndex)}
                 />
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent pointer-events-none" />
             </div>
 
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5" />
             </button>
 
             {/* Play/Pause Button */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-3 rounded-full hover:bg-background transition-colors"
+              className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm w-10 h-10 flex items-center justify-center hover:bg-background transition-colors"
               aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
             >
-              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
             </button>
+
+            {/* Slide Counter */}
+            <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-3 py-1.5 text-xs font-medium">
+              {currentIndex + 1} / {galleryImages.length}
+            </div>
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="mt-6 flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                  index === currentIndex ? 'border-accent scale-105' : 'border-transparent opacity-60 hover:opacity-100'
+                className={`flex-shrink-0 w-20 h-14 overflow-hidden transition-all duration-300 ${
+                  index === currentIndex ? 'ring-2 ring-accent' : 'opacity-50 hover:opacity-100'
                 }`}
               >
                 <img
@@ -168,13 +165,13 @@ const Gallery = () => {
           </div>
 
           {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-2 mt-6">
             {galleryImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentIndex ? 'w-8 bg-accent' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'w-8 bg-accent' : 'w-1.5 bg-border hover:bg-muted-foreground/30'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -190,21 +187,26 @@ const Gallery = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto space-y-6"
+            className="max-w-xl mx-auto space-y-8"
           >
-            <Instagram className="w-12 h-12 mx-auto text-accent" />
-            <h2 className="heading-lg">Follow Our Journey</h2>
-            <p className="text-muted-foreground text-lg">
-              See more of our work, behind-the-scenes moments, and style inspiration 
-              on our Instagram page.
-            </p>
+            <div className="space-y-4">
+              <div className="flex justify-center">
+                <div className="decorative-line" />
+              </div>
+              <Instagram className="w-10 h-10 mx-auto text-accent" />
+              <h2 className="heading-md">Follow Our Journey</h2>
+              <p className="text-primary-foreground/70">
+                See more of our work, behind-the-scenes moments, and style inspiration 
+                on Instagram.
+              </p>
+            </div>
             <a
               href="https://instagram.com/thehairclubfinland"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 btn-gold"
+              className="btn-primary"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-4 h-4" />
               @thehairclubfinland
             </a>
           </motion.div>
@@ -218,37 +220,37 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-[100] bg-primary/98 flex items-center justify-center"
             onClick={closeLightbox}
           >
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 p-2 text-primary-foreground hover:text-accent transition-colors z-10"
+              className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors z-10"
               aria-label="Close lightbox"
             >
-              <X className="w-8 h-8" />
+              <X className="w-6 h-6" />
             </button>
 
             {/* Image Counter */}
-            <div className="absolute top-4 left-4 text-primary-foreground text-sm">
+            <div className="absolute top-6 left-6 text-primary-foreground/70 text-sm font-medium">
               {lightboxIndex + 1} / {galleryImages.length}
             </div>
 
             {/* Navigation */}
             <button
               onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-primary-foreground hover:text-accent transition-colors"
+              className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-10 h-10" />
+              <ChevronLeft className="w-8 h-8" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-primary-foreground hover:text-accent transition-colors"
+              className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors"
               aria-label="Next image"
             >
-              <ChevronRight className="w-10 h-10" />
+              <ChevronRight className="w-8 h-8" />
             </button>
 
             {/* Image */}
@@ -256,10 +258,10 @@ const Gallery = () => {
               key={lightboxIndex}
               src={galleryImages[lightboxIndex].src}
               alt={galleryImages[lightboxIndex].alt}
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="max-w-[90vw] max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>

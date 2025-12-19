@@ -1,43 +1,46 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Instagram, Scissors } from 'lucide-react';
+import { Phone, MapPin, Clock, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Main Footer */}
+      <div className="container-custom section-padding-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Scissors className="w-8 h-8 text-accent" />
-              <div>
-                <h3 className="font-heading text-2xl font-bold">HAIR CLUB</h3>
-                <p className="text-xs tracking-[0.2em] text-muted-foreground">FINLAND</p>
-              </div>
+          <div className="lg:col-span-1 space-y-6">
+            <div>
+              <h3 className="font-heading text-2xl font-semibold tracking-wide">HAIR CLUB</h3>
+              <p className="text-[10px] tracking-[0.3em] text-primary-foreground/50 uppercase mt-1">
+                Finland • Est. 2010
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Where classic barbershop traditions meet modern style. Walk-ins always welcome.
+            <p className="text-sm text-primary-foreground/70 leading-relaxed max-w-xs">
+              Where traditional craftsmanship meets contemporary style. 
+              Experience the art of grooming in the heart of Oulu.
             </p>
             <a
               href="https://instagram.com/thehairclubfinland"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
             >
-              <Instagram className="w-5 h-5" />
+              <Instagram className="w-4 h-4" />
               @thehairclubfinland
             </a>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="font-heading text-lg font-semibold">Quick Links</h4>
-            <nav className="flex flex-col gap-2">
+          <div className="space-y-6">
+            <h4 className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/50">
+              Navigation
+            </h4>
+            <nav className="flex flex-col gap-3">
               {[
                 { name: 'Home', path: '/' },
-                { name: 'Services', path: '/services' },
+                { name: 'Our Services', path: '/services' },
                 { name: 'About Us', path: '/about' },
                 { name: 'Gallery', path: '/gallery' },
                 { name: 'Contact', path: '/contact' },
@@ -45,7 +48,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                  className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
                 >
                   {link.name}
                 </Link>
@@ -54,21 +57,23 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="font-heading text-lg font-semibold">Contact</h4>
-            <div className="space-y-3">
+          <div className="space-y-6">
+            <h4 className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/50">
+              Contact
+            </h4>
+            <div className="space-y-4">
               <a
                 href="tel:+358458961423"
-                className="flex items-center gap-3 text-sm text-muted-foreground hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors group"
               >
                 <Phone className="w-4 h-4 text-accent" />
-                045 8961423
+                <span>045 896 1423</span>
               </a>
               <a
                 href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-muted-foreground hover:text-accent transition-colors"
+                className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors group"
               >
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <span>Kajaaninkatu 36<br />90100 Oulu, Finland</span>
@@ -77,30 +82,44 @@ const Footer = () => {
           </div>
 
           {/* Hours */}
-          <div className="space-y-4">
-            <h4 className="font-heading text-lg font-semibold">Business Hours</h4>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2">
+          <div className="space-y-6">
+            <h4 className="text-xs font-medium tracking-[0.2em] uppercase text-primary-foreground/50">
+              Hours
+            </h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-sm">
                 <Clock className="w-4 h-4 text-accent" />
-                <span className="text-muted-foreground">Opening Hours</span>
+                <span className="text-primary-foreground/70">Business Hours</span>
               </div>
-              <div className="space-y-1 text-muted-foreground">
-                <p>Monday - Friday: 10:00 - 18:00</p>
-                <p>Saturday - Sunday: Closed</p>
+              <div className="space-y-2 text-sm text-primary-foreground/70">
+                <div className="flex justify-between">
+                  <span>Mon – Fri</span>
+                  <span>10:00 – 18:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Sat – Sun</span>
+                  <span className="text-destructive/80">Closed</span>
+                </div>
               </div>
-              <p className="text-accent font-medium pt-2">Walk-ins Welcome!</p>
+              <div className="pt-2">
+                <span className="text-xs text-accent font-medium tracking-wide uppercase">
+                  Walk-ins Welcome
+                </span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-charcoal-light">
+      {/* Bottom Bar */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-primary-foreground/50">
               © {currentYear} Hair Club Finland. All rights reserved.
             </p>
-            <p className="text-xs text-muted-foreground">
-              Crafted with passion in Oulu, Finland
+            <p className="text-xs text-primary-foreground/40">
+              Crafted with care in Oulu
             </p>
           </div>
         </div>

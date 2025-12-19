@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
 import ServiceCard from '@/components/ServiceCard';
 import { services } from '@/data/services';
@@ -16,34 +16,23 @@ const Services = () => {
       {/* Services Grid */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="label-text"
-            >
-              What We Offer
-            </motion.span>
-            <motion.h2
+          <div className="text-center mb-16">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="heading-lg mt-4"
+              className="space-y-4"
             >
-              Full Service Menu
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-muted-foreground mt-4 max-w-2xl mx-auto"
-            >
-              From classic cuts to modern styling, we offer a complete range of grooming services 
-              for every need and occasion.
-            </motion.p>
+              <div className="flex justify-center">
+                <div className="decorative-line" />
+              </div>
+              <span className="label-text">What We Offer</span>
+              <h2 className="heading-lg">Full Service Menu</h2>
+              <p className="body-md max-w-2xl mx-auto">
+                From classic cuts to modern styling, we offer a complete range of grooming services 
+                for every need and occasion.
+              </p>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -58,6 +47,23 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Pricing Note */}
+      <section className="section-padding-sm bg-secondary">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <p className="body-md">
+              Prices may vary based on hair length, complexity, and additional treatments. 
+              Consultation is always free — just ask our team.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom text-center">
@@ -65,20 +71,24 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto space-y-6"
+            className="max-w-2xl mx-auto space-y-8"
           >
-            <h2 className="heading-lg">Ready for Your Perfect Look?</h2>
-            <p className="text-muted-foreground text-lg">
-              Walk in anytime during our business hours. No appointment needed – 
-              just come in and let our experts take care of you.
-            </p>
-            <a
-              href="tel:+358458961423"
-              className="inline-flex items-center gap-2 btn-gold text-lg"
-            >
-              <Phone className="w-5 h-5" />
-              Call Now: 045 8961423
-            </a>
+            <div className="space-y-4">
+              <div className="flex justify-center">
+                <div className="decorative-line" />
+              </div>
+              <h2 className="heading-lg">Ready for Your Perfect Look?</h2>
+              <p className="text-primary-foreground/70 text-lg">
+                Walk in anytime during our business hours. No appointment needed — 
+                just come in and let our experts take care of you.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:+358458961423" className="btn-primary">
+                <Phone className="w-4 h-4" />
+                045 896 1423
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
