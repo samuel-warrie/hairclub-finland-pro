@@ -98,7 +98,7 @@ const Gallery = () => {
 
           {/* Main Carousel */}
           <div className="relative group">
-            <div className="relative aspect-[16/9] max-h-[600px] overflow-hidden bg-muted">
+            <div className="relative aspect-[4/3] sm:aspect-[16/9] max-h-[400px] sm:max-h-[500px] lg:max-h-[600px] overflow-hidden bg-muted">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentIndex}
@@ -117,17 +117,17 @@ const Gallery = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-background"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-12 h-12 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-background"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Play/Pause Button */}
@@ -146,12 +146,12 @@ const Gallery = () => {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="mt-3 sm:mt-4 flex gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
                 onClick={() => goToSlide(index)}
-                className={`flex-shrink-0 w-20 h-14 overflow-hidden transition-all duration-300 ${
+                className={`flex-shrink-0 w-14 h-10 sm:w-20 sm:h-14 overflow-hidden transition-all duration-300 ${
                   index === currentIndex ? 'ring-2 ring-accent' : 'opacity-50 hover:opacity-100'
                 }`}
               >

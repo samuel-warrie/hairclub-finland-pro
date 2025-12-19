@@ -46,14 +46,14 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-20">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-10"
+              className="space-y-6 sm:space-y-8 lg:space-y-10"
             >
               <div className="space-y-4">
                 <div className="decorative-line" />
@@ -65,7 +65,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Location */}
                 <a
                   href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
@@ -140,7 +140,7 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-card border border-border p-8 md:p-10">
+              <div className="bg-card border border-border p-5 sm:p-6 md:p-8 lg:p-10">
                 <div className="space-y-2 mb-8">
                   <h3 className="heading-sm">Send a Message</h3>
                   <p className="text-sm text-muted-foreground">
@@ -149,7 +149,7 @@ const Contact = () => {
                 </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
                         Full Name *

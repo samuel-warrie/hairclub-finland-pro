@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center">
+      <section className="relative h-screen min-h-[600px] sm:min-h-[700px] flex items-center justify-center">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -29,14 +29,14 @@ const Index = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: 48 }}
@@ -46,16 +46,16 @@ const Index = () => {
               <p className="label-text">Parturi • Kampaamo</p>
             </div>
 
-            <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9]">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9]">
               HAIR CLUB
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-normal mt-2 tracking-wide">Finland</span>
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mt-1 sm:mt-2 tracking-wide">Finland</span>
             </h1>
             
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-primary-foreground/70 text-lg md:text-xl max-w-lg mx-auto font-light"
+              className="text-primary-foreground/70 text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg mx-auto font-light px-4"
             >
               Traditional craftsmanship meets contemporary style in the heart of Oulu
             </motion.p>
@@ -64,7 +64,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-4"
             >
               <a href="tel:+358458961423" className="btn-primary">
                 <Phone className="w-4 h-4" />
@@ -79,9 +79,9 @@ const Index = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="inline-block bg-accent/90 px-5 py-2"
+              className="inline-block bg-accent/90 px-4 sm:px-5 py-1.5 sm:py-2"
             >
-              <span className="text-xs font-medium text-accent-foreground uppercase tracking-[0.2em]">
+              <span className="text-[10px] sm:text-xs font-medium text-accent-foreground uppercase tracking-[0.15em] sm:tracking-[0.2em]">
                 Walk-in Service
               </span>
             </motion.div>
@@ -93,7 +93,7 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 hidden sm:block"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -159,7 +159,7 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {featuredServices.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -201,7 +201,7 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
             {galleryPreview.map((image, index) => (
               <motion.div
                 key={image.id}
@@ -241,13 +241,13 @@ const Index = () => {
       {/* Location & Hours */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-10"
+              className="space-y-6 sm:space-y-8 lg:space-y-10"
             >
               <div className="space-y-4">
                 <div className="decorative-line" />
@@ -255,7 +255,7 @@ const Index = () => {
                 <h2 className="heading-lg">Location & Hours</h2>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                 <a
                   href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
                   target="_blank"
@@ -279,12 +279,12 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="font-heading text-lg font-medium mb-3">Business Hours</h3>
-                    <div className="text-primary-foreground/70 space-y-1 text-sm">
-                      <div className="flex justify-between gap-12">
+                    <div className="text-primary-foreground/70 space-y-1 text-xs sm:text-sm">
+                      <div className="flex justify-between gap-6 sm:gap-12">
                         <span>Monday – Friday</span>
                         <span>10:00 – 18:00</span>
                       </div>
-                      <div className="flex justify-between gap-12">
+                      <div className="flex justify-between gap-6 sm:gap-12">
                         <span>Saturday – Sunday</span>
                         <span className="text-destructive/80">Closed</span>
                       </div>

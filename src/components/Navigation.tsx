@@ -52,14 +52,14 @@ const Navigation = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="relative z-10">
             <div className="flex flex-col">
-              <span className="font-heading text-2xl font-semibold tracking-wide text-foreground">
+              <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-foreground">
                 HAIR CLUB
               </span>
-              <span className="text-[9px] tracking-[0.35em] text-muted-foreground uppercase font-body">
+              <span className="text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground uppercase font-body">
                 Finland • Est. 2010
               </span>
             </div>
