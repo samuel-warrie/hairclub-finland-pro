@@ -104,20 +104,14 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-10 p-2 -mr-2"
+            className="lg:hidden relative z-50 p-2 -mr-2 hover:bg-accent/10 rounded-md transition-colors duration-200"
             aria-label="Toggle menu"
           >
-            <div className="relative w-6 h-5">
-              <span className={`absolute left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${
-                isOpen ? 'top-2 rotate-45' : 'top-0'
-              }`} />
-              <span className={`absolute left-0 top-2 w-full h-0.5 bg-foreground transition-all duration-300 ${
-                isOpen ? 'opacity-0' : 'opacity-100'
-              }`} />
-              <span className={`absolute left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${
-                isOpen ? 'top-2 -rotate-45' : 'top-4'
-              }`} />
-            </div>
+            {isOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
           </button>
         </div>
       </nav>
@@ -130,19 +124,19 @@ const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background z-40 lg:hidden"
+            className="fixed inset-0 bg-background/98 backdrop-blur-lg z-40 lg:hidden"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.path}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.1 + 0.1 }}
                 >
                   <Link
                     to={link.path}
-                    className={`font-heading text-3xl font-medium ${
+                    className={`font-heading text-3xl sm:text-4xl font-medium tracking-wide transition-colors hover:text-accent ${
                       location.pathname === link.path ? 'text-accent' : 'text-foreground'
                     }`}
                   >
@@ -150,21 +144,21 @@ const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-                className="mt-8 flex flex-col items-center gap-4"
+                transition={{ delay: navLinks.length * 0.1 + 0.2 }}
+                className="mt-8 flex flex-col items-center gap-6"
               >
                 <a
                   href="tel:+358458961423"
-                  className="flex items-center gap-2 text-muted-foreground"
+                  className="flex items-center gap-3 text-lg text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   045 896 1423
                 </a>
-                <Link to="/contact" className="btn-primary">
+                <Link to="/contact" className="btn-primary text-base px-8 py-3">
                   Book Now
                 </Link>
               </motion.div>
