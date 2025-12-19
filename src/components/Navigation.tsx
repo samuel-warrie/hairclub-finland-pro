@@ -56,7 +56,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="relative z-10">
             <div className="flex flex-col">
-              <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-foreground">
+              <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-muted-foreground">
                 HAIR CLUB
               </span>
               <span className="text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground uppercase font-body">
