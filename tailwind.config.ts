@@ -79,9 +79,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'subtle': '0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6)',
-        'gold': '0 4px 24px hsla(158, 64%, 52%, 0.35)',
-        'gold-lg': '0 8px 40px hsla(158, 64%, 52%, 0.45)',
+        'subtle': '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        'gold': '0 4px 24px hsla(174, 56%, 33%, 0.25)',
+        'gold-lg': '0 8px 40px hsla(174, 56%, 33%, 0.35)',
       },
       keyframes: {
         "accordion-down": {

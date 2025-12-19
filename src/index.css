@@ -6,94 +6,94 @@
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 100%;
+    --background: 30 20% 95%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 7%;
+    --primary: 30 5% 15%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 30 15% 90%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 158 64% 52%;
+    --accent: 174 56% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 158 64% 52%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 174 56% 33%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --gold: 158 64% 52%;
-    --gold-light: 158 64% 62%;
-    --gold-dark: 158 64% 42%;
-    --cream: 0 0% 100%;
-    --charcoal: 0 0% 7%;
-    --charcoal-light: 0 0% 15%;
-    --warm-gray: 0 0% 40%;
+    --gold: 174 56% 33%;
+    --gold-light: 174 56% 43%;
+    --gold-dark: 174 56% 28%;
+    --cream: 30 20% 95%;
+    --charcoal: 0 0% 15%;
+    --charcoal-light: 0 0% 25%;
+    --warm-gray: 0 0% 50%;
 
     /* Typography */
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Libre Franklin', sans-serif;
 
     /* Shadows */
-    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6);
-    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.8);
-    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.9);
-    --shadow-gold: 0 4px 24px hsla(158, 64%, 52%, 0.35);
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-gold: 0 4px 24px hsla(174, 56%, 33%, 0.25);
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 7%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 174 56% 33%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 158 64% 52%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 158 64% 52%;
+    --sidebar-accent: 30 15% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 30 10% 85%;
+    --sidebar-ring: 174 56% 33%;
   }
 
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 7%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 158 64% 52%;
+    --accent: 174 56% 33%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 158 64% 52%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 174 56% 33%;
   }
 }
 
@@ -131,7 +131,7 @@
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-teal-600 via-teal-700 to-teal-800 bg-clip-text text-transparent;
   }
 
   .btn-primary {
