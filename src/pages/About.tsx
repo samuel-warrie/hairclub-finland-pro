@@ -88,7 +88,7 @@ const About = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -96,13 +96,13 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-card border border-border/50 p-8 text-center"
+                className="bg-card border border-border/50 p-5 sm:p-6 lg:p-8 text-center"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-accent mb-6">
-                  <value.icon className="w-6 h-6 text-accent-foreground" />
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-accent mb-4 sm:mb-6">
+                  <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent-foreground" />
                 </div>
-                <h3 className="font-heading text-xl font-medium mb-4">{value.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{value.description}</p>
+                <h3 className="font-heading text-lg sm:text-xl font-medium mb-3 sm:mb-4">{value.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
