@@ -12,15 +12,21 @@ const Index = () => {
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
+          key="hero-video"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           style={{
             minWidth: '100%',
             minHeight: '100%',
             objectPosition: '30% center',
+          }}
+          onError={(e) => {
+            const video = e.currentTarget;
+            video.load();
           }}
         >
           <source src="https://raw.githubusercontent.com/samuel-warrie/bg-video/main/hairclubfinland.mp4" type="video/mp4" />
