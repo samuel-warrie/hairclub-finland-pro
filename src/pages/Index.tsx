@@ -1,18 +1,50 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronDown, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import ServiceCard from '@/components/ServiceCard';
 import { featuredServices } from '@/data/services';
 import { galleryPreview } from '@/data/gallery';
 
 const Index = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        await video.play();
+      } catch (error) {
+        console.log('Video autoplay prevented:', error);
+      }
+    };
+
+    if (video.paused) {
+      playVideo();
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && video.paused) {
+        playVideo();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
-          key="hero-video"
+          ref={videoRef}
           autoPlay
           muted
           loop
@@ -24,9 +56,13 @@ const Index = () => {
             minHeight: '100%',
             objectPosition: '30% center',
           }}
+          onLoadedData={(e) => {
+            e.currentTarget.play().catch(() => {});
+          }}
           onError={(e) => {
-            const video = e.currentTarget;
-            video.load();
+            setTimeout(() => {
+              e.currentTarget.load();
+            }, 1000);
           }}
         >
           <source src="https://raw.githubusercontent.com/samuel-warrie/bg-video/main/hairclubfinland.mp4" type="video/mp4" />
