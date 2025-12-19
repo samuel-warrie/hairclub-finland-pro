@@ -74,17 +74,6 @@ const Index = () => {
                 View Services
               </Link>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="inline-block bg-accent/90 px-4 sm:px-5 py-1.5 sm:py-2"
-            >
-              <span className="text-[10px] sm:text-xs font-medium text-accent-foreground uppercase tracking-[0.15em] sm:tracking-[0.2em]">
-                Walk-in Service
-              </span>
-            </motion.div>
           </motion.div>
         </div>
 
