@@ -10,13 +10,13 @@ const Index = () => {
     <main className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Desktop Background Video */}
+        {/* Background Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="hidden md:block absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
             minWidth: '100%',
             minHeight: '100%',
@@ -25,15 +25,6 @@ const Index = () => {
         >
           <source src="https://raw.githubusercontent.com/samuel-warrie/bg-video/main/hairclubfinland.mp4" type="video/mp4" />
         </video>
-
-        {/* Mobile Fallback Image */}
-        <div className="md:hidden absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80"
-            alt="Hair Club Finland"
-            className="w-full h-full object-cover"
-          />
-        </div>
 
         <div className="absolute inset-0 bg-primary/70" />
 
@@ -57,7 +48,7 @@ const Index = () => {
 
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9]">
               HAIR CLUB
-              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mt-1 sm:mt-2 tracking-wide">Finland</span>
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mt-1 sm:mt-2 tracking-wide uppercase">Finland</span>
             </h1>
             
             <motion.p
