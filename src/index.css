@@ -2,56 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 30 10% 98%;
+    --foreground: 30 5% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 30 15% 99%;
+    --card-foreground: 30 5% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 30 15% 99%;
+    --popover-foreground: 30 5% 10%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 30 5% 8%;
+    --primary-foreground: 30 15% 98%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 30 8% 94%;
+    --secondary-foreground: 30 5% 10%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 30 8% 94%;
+    --muted-foreground: 30 5% 45%;
 
-    --accent: 43 96% 50%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 35 85% 52%;
+    --accent-foreground: 30 5% 8%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 43 96% 50%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 35 85% 52%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --gold: 43 96% 50%;
-    --gold-light: 43 96% 60%;
-    --gold-dark: 43 96% 40%;
-    --charcoal: 0 0% 10%;
-    --charcoal-light: 0 0% 20%;
+    --gold: 35 85% 52%;
+    --gold-light: 38 90% 62%;
+    --gold-dark: 32 80% 42%;
+    --cream: 35 30% 96%;
+    --charcoal: 30 5% 8%;
+    --charcoal-light: 30 5% 15%;
+    --warm-gray: 30 5% 35%;
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Libre Franklin', sans-serif;
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
-    --shadow-gold: 0 4px 20px hsla(43, 96%, 50%, 0.3);
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+    --shadow-gold: 0 4px 24px hsla(35, 85%, 52%, 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,33 +67,33 @@
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    --background: 30 5% 6%;
+    --foreground: 30 10% 95%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 30 5% 9%;
+    --card-foreground: 30 10% 95%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 30 5% 9%;
+    --popover-foreground: 30 10% 95%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 30 10% 95%;
+    --primary-foreground: 30 5% 6%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 5% 14%;
+    --secondary-foreground: 30 10% 95%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 30 5% 14%;
+    --muted-foreground: 30 5% 60%;
 
-    --accent: 43 96% 50%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 35 85% 52%;
+    --accent-foreground: 30 5% 8%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 43 96% 50%;
+    --border: 30 5% 18%;
+    --input: 30 5% 18%;
+    --ring: 35 85% 52%;
   }
 }
 
@@ -99,106 +102,186 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: 0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    @apply font-semibold tracking-tight;
+    @apply font-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-accent/20 text-foreground;
   }
 }
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 bg-clip-text text-transparent;
   }
 
-  .btn-gold {
-    @apply bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:shadow-[var(--shadow-gold)] 
-           hover:scale-105 active:scale-95;
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 
+           bg-accent text-accent-foreground font-medium 
+           px-7 py-3.5 rounded-sm
+           text-sm tracking-wide uppercase
+           transition-all duration-300 
+           hover:bg-gold-dark hover:shadow-gold
+           active:scale-[0.98];
   }
 
-  .btn-outline-gold {
-    @apply border-2 border-accent text-accent font-semibold px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:bg-accent hover:text-accent-foreground
-           hover:shadow-[var(--shadow-gold)];
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 
+           bg-transparent text-foreground font-medium 
+           px-7 py-3.5 rounded-sm
+           text-sm tracking-wide uppercase
+           border border-foreground/20
+           transition-all duration-300 
+           hover:bg-foreground hover:text-background
+           active:scale-[0.98];
   }
 
-  .card-hover {
-    @apply transition-all duration-500 hover:shadow-lg hover:-translate-y-2;
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 
+           bg-transparent text-primary-foreground font-medium 
+           px-7 py-3.5 rounded-sm
+           text-sm tracking-wide uppercase
+           border border-primary-foreground/30
+           transition-all duration-300 
+           hover:bg-primary-foreground hover:text-primary
+           active:scale-[0.98];
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-sm border border-border/50
+           shadow-[var(--shadow-sm)] 
+           transition-all duration-500 
+           hover:shadow-[var(--shadow-md)] hover:-translate-y-1;
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-padding-sm {
+    @apply py-12 md:py-16;
+  }
+
+  .heading-display {
+    @apply text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95];
   }
 
   .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply text-4xl md:text-5xl font-semibold leading-tight;
   }
 
   .heading-lg {
-    @apply text-3xl md:text-4xl font-bold;
+    @apply text-3xl md:text-4xl font-semibold leading-tight;
   }
 
   .heading-md {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-2xl md:text-3xl font-medium;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-medium;
   }
 
   .label-text {
-    @apply uppercase tracking-[0.2em] text-sm font-medium text-accent;
+    @apply uppercase tracking-[0.25em] text-xs font-medium text-accent;
+  }
+
+  .body-lg {
+    @apply text-lg leading-relaxed text-muted-foreground;
+  }
+
+  .body-md {
+    @apply text-base leading-relaxed text-muted-foreground;
   }
 
   .overlay-gradient {
-    @apply absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70;
+    @apply absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/80;
+  }
+
+  .overlay-dark {
+    @apply absolute inset-0 bg-primary/70;
+  }
+
+  /* Decorative line */
+  .decorative-line {
+    @apply w-12 h-px bg-accent;
+  }
+
+  /* Form inputs */
+  .input-field {
+    @apply w-full px-4 py-3.5 
+           bg-background border border-border 
+           rounded-sm text-foreground
+           placeholder:text-muted-foreground/60
+           focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/20
+           transition-all duration-200;
+  }
+
+  /* Subtle texture overlay */
+  .texture-overlay {
+    @apply relative;
+  }
+  
+  .texture-overlay::before {
+    content: '';
+    @apply absolute inset-0 opacity-[0.03] pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 }
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+    animation: slideUp 0.8s ease-out forwards;
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes bounce-gentle {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  @keyframes bounceGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
 
   .animate-bounce-gentle {
-    animation: bounce-gentle 2s ease-in-out infinite;
+    animation: bounceGentle 2.5s ease-in-out infinite;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

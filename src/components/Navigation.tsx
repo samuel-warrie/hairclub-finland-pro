@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
@@ -18,7 +18,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -28,131 +28,151 @@ const Navigation = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
-    <>
-      {/* Mobile Contact Bar */}
-      <div className="md:hidden bg-primary text-primary-foreground py-2 px-4 flex justify-between items-center text-xs">
-        <a href="tel:+358458961423" className="flex items-center gap-1">
-          <Phone className="w-3 h-3" />
-          <span>045 8961423</span>
-        </a>
-        <span className="flex items-center gap-1">
-          <Clock className="w-3 h-3" />
-          <span>Mon-Fri 10-18</span>
-        </span>
-        <a 
-          href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center gap-1"
-        >
-          <MapPin className="w-3 h-3" />
-          <span>Oulu</span>
-        </a>
-      </div>
-
-      {/* Main Navigation */}
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-md shadow-md' 
-            : 'bg-transparent'
-        }`}
-      >
-        <nav className="container-custom py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex flex-col items-start">
-              <span className="font-heading text-2xl font-bold tracking-wider">HAIR CLUB</span>
-              <span className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase">Finland</span>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`relative text-sm font-medium tracking-wide uppercase transition-colors hover:text-accent ${
-                    location.pathname === link.path ? 'text-accent' : 'text-foreground'
-                  }`}
-                >
-                  {link.name}
-                  {location.pathname === link.path && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
-                    />
-                  )}
-                </Link>
-              ))}
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-background/98 backdrop-blur-md border-b border-border/50 shadow-subtle' 
+          : 'bg-transparent'
+      }`}
+    >
+      <nav className="container-custom">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link to="/" className="relative z-10">
+            <div className="flex flex-col">
+              <span className="font-heading text-2xl font-semibold tracking-wide text-foreground">
+                HAIR CLUB
+              </span>
+              <span className="text-[9px] tracking-[0.35em] text-muted-foreground uppercase font-body">
+                Finland • Est. 2010
+              </span>
             </div>
+          </Link>
 
-            {/* CTA Button */}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="relative group"
+              >
+                <span className={`text-[13px] font-medium tracking-wider uppercase transition-colors duration-300 ${
+                  location.pathname === link.path 
+                    ? 'text-accent' 
+                    : 'text-foreground/80 hover:text-foreground'
+                }`}>
+                  {link.name}
+                </span>
+                <span className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                  location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center gap-6">
             <a
               href="tel:+358458961423"
-              className="hidden md:flex items-center gap-2 btn-gold text-sm"
+              className="flex items-center gap-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <Phone className="w-4 h-4" />
-              Call Now
+              045 896 1423
             </a>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-foreground"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <Link to="/contact" className="btn-primary text-xs py-3 px-5">
+              Book Now
+            </Link>
           </div>
-        </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-background border-t border-border overflow-hidden"
-            >
-              <div className="container-custom py-6 flex flex-col gap-4">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      to={link.path}
-                      className={`block py-2 text-lg font-medium ${
-                        location.pathname === link.path ? 'text-accent' : 'text-foreground'
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.a
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.1 }}
-                  href="tel:+358458961423"
-                  className="btn-gold text-center mt-4"
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden relative z-10 p-2 -mr-2"
+            aria-label="Toggle menu"
+          >
+            <div className="relative w-6 h-5">
+              <span className={`absolute left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${
+                isOpen ? 'top-2 rotate-45' : 'top-0'
+              }`} />
+              <span className={`absolute left-0 top-2 w-full h-0.5 bg-foreground transition-all duration-300 ${
+                isOpen ? 'opacity-0' : 'opacity-100'
+              }`} />
+              <span className={`absolute left-0 w-full h-0.5 bg-foreground transition-all duration-300 ${
+                isOpen ? 'top-2 -rotate-45' : 'top-4'
+              }`} />
+            </div>
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-background z-40 lg:hidden"
+          >
+            <div className="flex flex-col items-center justify-center h-full gap-8">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.path}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <Phone className="w-4 h-4 inline mr-2" />
-                  Call Now
-                </motion.a>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.header>
-    </>
+                  <Link
+                    to={link.path}
+                    className={`font-heading text-3xl font-medium ${
+                      location.pathname === link.path ? 'text-accent' : 'text-foreground'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+                className="mt-8 flex flex-col items-center gap-4"
+              >
+                <a
+                  href="tel:+358458961423"
+                  className="flex items-center gap-2 text-muted-foreground"
+                >
+                  <Phone className="w-5 h-5" />
+                  045 896 1423
+                </a>
+                <Link to="/contact" className="btn-primary">
+                  Book Now
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 

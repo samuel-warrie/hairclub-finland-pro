@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, MapPin, Clock, Send, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import HeroBanner from '@/components/HeroBanner';
 import { services } from '@/data/services';
@@ -25,11 +25,10 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    toast.success('Request sent!', {
-      description: 'We will get back to you soon. For immediate service, please call us directly.',
+    toast.success('Request sent successfully!', {
+      description: 'We will get back to you soon. For immediate service, please call us.',
     });
 
     setFormData({ name: '', phone: '', service: '', message: '' });
@@ -47,20 +46,22 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              transition={{ duration: 0.6 }}
+              className="space-y-10"
             >
-              <div>
+              <div className="space-y-4">
+                <div className="decorative-line" />
                 <span className="label-text">Get In Touch</span>
-                <h2 className="heading-lg mt-4">Contact Information</h2>
-                <p className="text-muted-foreground mt-4">
-                  Have questions? We're here to help. Reach out through any of the channels below 
-                  or simply walk in during our business hours.
+                <h2 className="heading-lg">Visit Our Shop</h2>
+                <p className="body-md max-w-md">
+                  Have questions? We're here to help. Drop by during business hours 
+                  or reach out through any of the channels below.
                 </p>
               </div>
 
@@ -70,67 +71,61 @@ const Contact = () => {
                   href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 p-4 bg-card rounded-xl card-hover group"
+                  className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50 transition-all duration-300 hover:border-accent/30 hover:bg-secondary group"
                 >
-                  <div className="bg-accent p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-accent-foreground" />
+                  <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-accent-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">Location</h3>
-                    <p className="text-muted-foreground">
+                  <div className="flex-1">
+                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">
+                      Location
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
                       Kajaaninkatu 36<br />
                       90100 Oulu, Finland
                     </p>
-                    <span className="text-accent text-sm mt-2 inline-block">View on Google Maps →</span>
+                    <span className="inline-flex items-center gap-1 text-accent text-xs mt-3 font-medium">
+                      View on Map <ArrowRight className="w-3 h-3" />
+                    </span>
                   </div>
                 </a>
 
                 {/* Phone */}
                 <a
                   href="tel:+358458961423"
-                  className="flex items-start gap-4 p-4 bg-card rounded-xl card-hover group"
+                  className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50 transition-all duration-300 hover:border-accent/30 hover:bg-secondary group"
                 >
-                  <div className="bg-accent p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-accent-foreground" />
+                  <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-accent-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">Phone</h3>
-                    <p className="text-muted-foreground text-lg">045 8961423</p>
-                    <span className="text-accent text-sm mt-2 inline-block">Tap to call →</span>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">
+                      Phone
+                    </h3>
+                    <p className="text-muted-foreground">045 896 1423</p>
+                    <span className="inline-flex items-center gap-1 text-accent text-xs mt-3 font-medium">
+                      Tap to Call <ArrowRight className="w-3 h-3" />
+                    </span>
                   </div>
                 </a>
 
                 {/* Hours */}
-                <div className="flex items-start gap-4 p-4 bg-card rounded-xl">
-                  <div className="bg-accent p-3 rounded-full">
-                    <Clock className="w-6 h-6 text-accent-foreground" />
+                <div className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50">
+                  <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-accent-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Business Hours</h3>
-                    <div className="text-muted-foreground space-y-1 mt-2">
-                      <div className="flex justify-between gap-8">
-                        <span>Monday</span>
-                        <span>10:00 - 18:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Tuesday</span>
-                        <span>10:00 - 18:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Wednesday</span>
-                        <span>10:00 - 18:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Thursday</span>
-                        <span>10:00 - 18:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Friday</span>
-                        <span>10:00 - 18:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8 text-destructive">
-                        <span>Saturday - Sunday</span>
-                        <span>Closed</span>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-lg font-medium mb-3">Business Hours</h3>
+                    <div className="space-y-2 text-sm">
+                      {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
+                        <div key={day} className="flex justify-between text-muted-foreground">
+                          <span>{day}</span>
+                          <span>10:00 – 18:00</span>
+                        </div>
+                      ))}
+                      <div className="flex justify-between text-muted-foreground pt-2 border-t border-border">
+                        <span>Saturday – Sunday</span>
+                        <span className="text-destructive">Closed</span>
                       </div>
                     </div>
                   </div>
@@ -143,45 +138,53 @@ const Contact = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="bg-card p-8 rounded-xl shadow-lg">
-                <h3 className="font-heading text-2xl font-semibold mb-6">Send Us a Message</h3>
+              <div className="bg-card border border-border p-8 md:p-10">
+                <div className="space-y-2 mb-8">
+                  <h3 className="heading-sm">Send a Message</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Fill out the form below and we'll get back to you.
+                  </p>
+                </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-all"
-                      placeholder="Your name"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="input-field"
+                        placeholder="Your name"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="input-field"
+                        placeholder="Your phone"
+                      />
+                    </div>
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-all"
-                      placeholder="Your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium mb-2">
+                    <label htmlFor="service" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
                       Service Interest
                     </label>
                     <select
@@ -189,20 +192,20 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                      className="input-field appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%20width%3d%2224%22%20height%3d%2224%22%20viewBox%3d%220%200%2024%2024%22%20fill%3d%22none%22%20stroke%3d%22%23999%22%20stroke-width%3d%222%22%20stroke-linecap%3d%22round%22%20stroke-linejoin%3d%22round%22%3e%3cpolyline%20points%3d%226%209%2012%2015%2018%209%22%3e%3c%2fpolyline%3e%3c%2fsvg%3e')] bg-no-repeat bg-[right_1rem_center] bg-[length:1rem]"
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (
                         <option key={service.id} value={service.title}>
-                          {service.title} - {service.price}
+                          {service.title} – {service.price}
                         </option>
                       ))}
                     </select>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Additional Message
+                    <label htmlFor="message" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
+                      Message
                     </label>
                     <textarea
                       id="message"
@@ -210,7 +213,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-accent transition-all resize-none"
+                      className="input-field resize-none"
                       placeholder="Any special requests or questions?"
                     />
                   </div>
@@ -218,27 +221,52 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-gold flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-5 h-5" />
-                    {isSubmitting ? 'Sending...' : 'Send Request'}
+                    {isSubmitting ? (
+                      'Sending...'
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        Send Message
+                      </>
+                    )}
                   </button>
                 </form>
 
-                <div className="mt-6 p-4 bg-secondary rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground">
+                <div className="mt-8 pt-6 border-t border-border text-center">
+                  <p className="text-sm text-muted-foreground mb-2">
                     Prefer to call directly?
                   </p>
                   <a
                     href="tel:+358458961423"
-                    className="text-accent font-semibold text-lg hover:underline"
+                    className="inline-flex items-center gap-2 text-lg font-heading font-medium text-accent hover:text-accent/80 transition-colors"
                   >
-                    045 8961423
+                    <Phone className="w-5 h-5" />
+                    045 896 1423
                   </a>
                 </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Walk-in CTA */}
+      <section className="section-padding-sm bg-primary text-primary-foreground">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-xl mx-auto space-y-4"
+          >
+            <h3 className="heading-md">No Appointment Needed</h3>
+            <p className="text-primary-foreground/70">
+              We operate on a walk-in basis. Simply drop by during our business hours 
+              and we'll take care of the rest.
+            </p>
+          </motion.div>
         </div>
       </section>
     </main>

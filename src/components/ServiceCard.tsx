@@ -17,40 +17,41 @@ const ServiceCard = ({ title, description, price, icon: Icon, image, index = 0 }
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-xl bg-card shadow-md card-hover"
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group relative bg-card border border-border/50 overflow-hidden"
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-56 overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-80" />
         
         {/* Icon Badge */}
-        <div className="absolute top-4 right-4 bg-accent p-3 rounded-full shadow-gold">
+        <div className="absolute top-5 right-5 bg-accent w-11 h-11 flex items-center justify-center">
           <Icon className="w-5 h-5 text-accent-foreground" />
         </div>
         
         {/* Price Badge */}
-        <div className="absolute bottom-4 left-4">
-          <span className="text-primary-foreground font-heading text-xl font-bold">{price}</span>
+        <div className="absolute bottom-5 left-5">
+          <span className="text-primary-foreground font-heading text-2xl font-semibold">{price}</span>
         </div>
       </div>
 
       {/* Content */}
       <div className="p-6 space-y-4">
         <h3 className="font-heading text-xl font-semibold text-card-foreground">{title}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{description}</p>
         
         <a
           href="tel:+358458961423"
-          className="inline-flex items-center gap-2 btn-gold text-sm w-full justify-center"
+          className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors group/btn"
         >
           <Phone className="w-4 h-4" />
-          Call Now
+          <span>Call to Book</span>
+          <span className="transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
         </a>
       </div>
     </motion.div>
