@@ -1,8 +1,19 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Instagram } from 'lucide-react';
+import { Phone, MapPin, Clock, Instagram, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { getBusinessStatus } from '@/lib/businessHours';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [status, setStatus] = useState(getBusinessStatus());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus(getBusinessStatus());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -88,16 +99,34 @@ const Footer = () => {
             </h4>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2 text-xs sm:text-sm">
-                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
-                <span className="text-primary-foreground/70">Business Hours</span>
+                {status.status === 'open' && (
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500" />
+                )}
+                {status.status === 'closing-soon' && (
+                  <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
+                )}
+                {status.status === 'closed' && (
+                  <XCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500" />
+                )}
+                <span className={`font-medium ${
+                  status.status === 'open' ? 'text-green-500' :
+                  status.status === 'closing-soon' ? 'text-amber-500' :
+                  'text-red-500'
+                }`}>
+                  {status.message}
+                </span>
               </div>
               <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-primary-foreground/70">
                 <div className="flex justify-between gap-4">
                   <span>Mon – Fri</span>
-                  <span>10:00 – 18:00</span>
+                  <span>9:00 – 18:00</span>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <span>Sat – Sun</span>
+                  <span>Saturday</span>
+                  <span>9:00 – 17:00</span>
+                </div>
+                <div className="flex justify-between gap-4">
+                  <span>Sunday</span>
                   <span className="text-destructive/80">Closed</span>
                 </div>
               </div>
