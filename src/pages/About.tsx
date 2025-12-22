@@ -44,7 +44,7 @@ const About = () => {
                 <div className="flex justify-center">
                   <div className="decorative-line" />
                 </div>
-                <span className="label-text">Since 2010</span>
+                <span className="label-text">Since 2012</span>
                 <h2 className="heading-xl">The Hair Club Story</h2>
               </div>
               

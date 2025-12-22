@@ -60,7 +60,7 @@ const Navigation = () => {
                 HAIR CLUB
               </span>
               <span className="text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground uppercase font-body">
-                Finland • Est. 2010
+                Finland • Est. 2012
               </span>
             </div>
           </Link>

@@ -14,7 +14,7 @@ const Footer = () => {
             <div>
               <h3 className="font-heading text-xl sm:text-2xl font-semibold tracking-wide">HAIR CLUB</h3>
               <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-primary-foreground/50 uppercase mt-1">
-                Finland • Est. 2010
+                Finland • Est. 2012
               </p>
             </div>
             <p className="text-xs sm:text-sm text-primary-foreground/70 leading-relaxed max-w-xs hidden sm:block">
