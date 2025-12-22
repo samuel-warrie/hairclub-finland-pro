@@ -47,23 +47,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Pricing Note */}
-      <section className="section-padding-sm bg-secondary">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-2xl mx-auto"
-          >
-            <p className="body-md">
-              Prices may vary based on hair length, complexity, and additional treatments. 
-              Consultation is always free — just ask our team.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom text-center">
