@@ -27,8 +27,8 @@ const Footer = () => {
               className="block"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <h3 className="font-heading text-xl sm:text-2xl font-semibold tracking-wide transition-opacity hover:opacity-80 text-gradient-rose-gold">HAIR CLUB</h3>
-              <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase mt-1 transition-opacity hover:opacity-80 text-gradient-rose-gold">
+              <h3 className="font-heading text-xl sm:text-2xl font-semibold tracking-wide transition-opacity hover:opacity-80" style={{ color: '#D4AF7A' }}>HAIR CLUB</h3>
+              <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase mt-1 transition-opacity hover:opacity-80" style={{ color: '#D4AF7A' }}>
                 Finland • Est. 2012
               </p>
             </Link>

@@ -30,7 +30,7 @@ const HeroBanner = ({ title, subtitle, image }: HeroBannerProps) => {
           <div className="flex justify-center mb-4 sm:mb-6">
             <div className="decorative-line" />
           </div>
-          <h1 className="heading-display text-gradient-rose-gold">
+          <h1 className="heading-display text-primary-foreground">
             {title}
           </h1>
           {subtitle && (
