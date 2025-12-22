@@ -21,7 +21,7 @@ const ServiceCard = ({ title, description, price, icon: Icon, image, index = 0 }
       className="group relative bg-card border border-border/50 overflow-hidden"
     >
       {/* Image */}
-      <div className="relative h-44 sm:h-52 lg:h-56 overflow-hidden">
+      <div className="relative h-40 sm:h-48 lg:h-52 overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -41,7 +41,7 @@ const ServiceCard = ({ title, description, price, icon: Icon, image, index = 0 }
       </div>
 
       {/* Content */}
-      <div className="p-4 sm:p-5 lg:p-6 space-y-3 sm:space-y-4">
+      <div className="p-4 sm:p-5 space-y-2.5 sm:space-y-3">
         <h3 className="font-heading text-lg sm:text-xl font-semibold text-card-foreground">{title}</h3>
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2">{description}</p>
         

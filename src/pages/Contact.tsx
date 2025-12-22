@@ -46,16 +46,16 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 xl:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 xl:gap-16">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6 sm:space-y-8 lg:space-y-10"
+              className="space-y-5 sm:space-y-6 lg:space-y-8"
             >
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="decorative-line" />
                 <span className="label-text">Get In Touch</span>
                 <h2 className="heading-lg">Visit Our Shop</h2>
@@ -65,7 +65,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-4 sm:space-y-5">
                 {/* Location */}
                 <a
                   href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
@@ -140,16 +140,16 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="bg-card border border-border p-5 sm:p-6 md:p-8 lg:p-10">
-                <div className="space-y-2 mb-8">
+              <div className="bg-card border border-border p-5 sm:p-6 md:p-8">
+                <div className="space-y-2 mb-6 sm:mb-8">
                   <h3 className="heading-sm">Send a Message</h3>
                   <p className="text-sm text-muted-foreground">
                     Fill out the form below and we'll get back to you.
                   </p>
                 </div>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
                         Full Name *
@@ -234,7 +234,7 @@ const Contact = () => {
                   </button>
                 </form>
 
-                <div className="mt-8 pt-6 border-t border-border text-center">
+                <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-border text-center">
                   <p className="text-sm text-muted-foreground mb-2">
                     Prefer to call directly?
                   </p>
@@ -259,7 +259,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-xl mx-auto space-y-4"
+            className="max-w-xl mx-auto space-y-3 sm:space-y-4"
           >
             <h3 className="heading-md">No Appointment Needed</h3>
             <p className="text-primary-foreground/70">

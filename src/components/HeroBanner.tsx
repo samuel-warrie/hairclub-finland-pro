@@ -8,7 +8,7 @@ interface HeroBannerProps {
 
 const HeroBanner = ({ title, subtitle, image }: HeroBannerProps) => {
   return (
-    <section className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] min-h-[280px] sm:min-h-[320px] md:min-h-[400px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[35vh] sm:h-[40vh] md:h-[45vh] min-h-[260px] sm:min-h-[300px] md:min-h-[360px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img

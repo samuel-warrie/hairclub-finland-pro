@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <video
           ref={videoRef}
@@ -71,12 +71,12 @@ const Index = () => {
         <div className="absolute inset-0 bg-primary/70" />
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-5 sm:px-6 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 sm:space-y-8"
+            className="space-y-5 sm:space-y-8"
           >
             <div className="space-y-3 sm:space-y-4">
               <motion.div
@@ -97,7 +97,7 @@ const Index = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-primary-foreground/70 text-sm sm:text-base md:text-lg lg:text-xl max-w-md sm:max-w-lg mx-auto font-light px-4"
+              className="text-primary-foreground/70 text-sm sm:text-base md:text-lg max-w-md sm:max-w-lg mx-auto font-light px-2"
             >
               Traditional craftsmanship meets contemporary style in the heart of Oulu
             </motion.p>
@@ -175,12 +175,12 @@ const Index = () => {
       {/* Featured Services */}
       <section className="section-padding bg-secondary">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               <div className="flex justify-center">
                 <div className="decorative-line" />
@@ -190,7 +190,7 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {featuredServices.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -204,7 +204,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-14"
+            className="text-center mt-10 sm:mt-12 md:mt-14"
           >
             <Link to="/services" className="btn-secondary">
               View All Services
@@ -217,12 +217,12 @@ const Index = () => {
       {/* Gallery Preview */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               <div className="flex justify-center">
                 <div className="decorative-line" />
@@ -232,7 +232,7 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-3 md:gap-4">
             {galleryPreview.map((image, index) => (
               <motion.div
                 key={image.id}
@@ -256,7 +256,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mt-14"
+            className="text-center mt-10 sm:mt-12 md:mt-14"
           >
             <Link
               to="/gallery"
@@ -272,21 +272,21 @@ const Index = () => {
       {/* Location & Hours */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 xl:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6 sm:space-y-8 lg:space-y-10"
+              className="space-y-5 sm:space-y-6 lg:space-y-8"
             >
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="decorative-line" />
                 <span className="label-text">Find Us</span>
                 <h2 className="heading-lg">Location & Hours</h2>
               </div>
 
-              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+              <div className="space-y-4 sm:space-y-5 lg:space-y-6">
                 <a
                   href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
                   target="_blank"
@@ -324,7 +324,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="bg-charcoal-light/30 border border-primary-foreground/10 p-6">
+              <div className="bg-charcoal-light/30 border border-primary-foreground/10 p-5 sm:p-6">
                 <p className="font-heading text-xl font-medium text-accent mb-2">
                   Walk-ins Welcome
                 </p>

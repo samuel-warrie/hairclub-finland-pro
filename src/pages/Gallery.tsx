@@ -81,12 +81,12 @@ const Gallery = () => {
       {/* Carousel Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               <div className="flex justify-center">
                 <div className="decorative-line" />
@@ -146,7 +146,7 @@ const Gallery = () => {
           </div>
 
           {/* Thumbnail Navigation */}
-          <div className="mt-3 sm:mt-4 flex gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="mt-2.5 sm:mt-3 md:mt-4 flex gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
@@ -165,7 +165,7 @@ const Gallery = () => {
           </div>
 
           {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-4 sm:mt-5 md:mt-6">
             {galleryImages.map((_, index) => (
               <button
                 key={index}
@@ -187,9 +187,9 @@ const Gallery = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-xl mx-auto space-y-8"
+            className="max-w-xl mx-auto space-y-6 sm:space-y-8"
           >
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>

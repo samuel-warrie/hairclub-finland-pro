@@ -16,12 +16,12 @@ const Services = () => {
       {/* Services Grid */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               <div className="flex justify-center">
                 <div className="decorative-line" />
@@ -35,7 +35,7 @@ const Services = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
             {services.map((service, index) => (
               <ServiceCard
                 key={service.id}
@@ -54,9 +54,9 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto space-y-8"
+            className="max-w-2xl mx-auto space-y-6 sm:space-y-8"
           >
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>

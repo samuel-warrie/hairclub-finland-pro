@@ -52,7 +52,7 @@ const Navigation = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="relative z-10">
             <div className="flex flex-col">
