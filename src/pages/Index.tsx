@@ -88,12 +88,14 @@ const Index = () => {
             </div>
 
             <h1 className="font-heading font-semibold tracking-tight leading-[0.9] flex flex-col items-center gap-1 sm:gap-2">
-              <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] uppercase" style={{ color: '#D4AF7A' }}>
-                HAIR
-              </span>
-              <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] uppercase" style={{ color: '#D4AF7A' }}>
-                CLUB
-              </span>
+              <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+                <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] uppercase" style={{ color: '#D4AF7A' }}>
+                  HAIR
+                </span>
+                <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] uppercase" style={{ color: '#D4AF7A' }}>
+                  CLUB
+                </span>
+              </div>
               <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase mt-4 sm:mt-6" style={{ color: '#D4AF7A' }}>
                 PARTURI-KAMPAAMO
               </span>
