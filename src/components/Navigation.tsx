@@ -55,14 +55,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <div className="flex flex-col">
-              <span className="font-heading text-xl sm:text-2xl font-semibold tracking-wide text-muted-foreground">
-                HAIR CLUB
-              </span>
-              <span className="text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground uppercase font-body">
-                Finland • Est. 2012
-              </span>
-            </div>
+            <img
+              src="/logo_smaller-picsart-backgroundchanger.png"
+              alt="Hair Club"
+              className="h-10 sm:h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
