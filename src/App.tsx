@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { BusinessStatusModal } from "./components/BusinessStatusModal";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -35,6 +36,7 @@ const App = () => (
           </div>
           <Footer />
           <ScrollToTop />
+          <BusinessStatusModal />
         </div>
       </BrowserRouter>
     </TooltipProvider>
