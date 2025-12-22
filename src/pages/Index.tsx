@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronDown, Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import ServiceCard from '@/components/ServiceCard';
 import { featuredServices } from '@/data/services';
@@ -118,23 +118,6 @@ const Index = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 hidden sm:block"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center text-primary-foreground/50"
-          >
-            <span className="text-[10px] uppercase tracking-[0.3em] mb-3">Scroll</span>
-            <ChevronDown className="w-5 h-5" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Introduction Section */}
