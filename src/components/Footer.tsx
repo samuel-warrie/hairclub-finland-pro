@@ -23,8 +23,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1 space-y-4 sm:space-y-6">
             <div>
-              <h3 className="font-heading text-xl sm:text-2xl font-semibold tracking-wide">HAIR CLUB</h3>
-              <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-primary-foreground/50 uppercase mt-1">
+              <h3 className="font-heading text-xl sm:text-2xl font-semibold tracking-wide" style={{ color: '#D4AF7A' }}>HAIR CLUB</h3>
+              <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase mt-1" style={{ color: '#D4AF7A' }}>
                 Finland • Est. 2012
               </p>
             </div>
