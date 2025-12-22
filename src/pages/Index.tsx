@@ -85,7 +85,6 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="h-px bg-accent mx-auto"
               />
-              <p className="label-text">Parturi • Kampaamo</p>
             </div>
 
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9]">
