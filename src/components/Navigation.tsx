@@ -52,13 +52,13 @@ const Navigation = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           {/* Logo */}
           <Link to="/" className="relative z-10">
             <img
               src="/logo_smaller-picsart-backgroundchanger.png"
               alt="Hair Club"
-              className="h-12 sm:h-14 md:h-16 w-auto"
+              className="h-16 sm:h-20 md:h-24 w-auto"
             />
           </Link>
 
