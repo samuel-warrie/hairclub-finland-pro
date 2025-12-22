@@ -24,7 +24,7 @@
     --muted: 30 15% 88%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 40 45% 72%;
+    --accent: 26 31% 60%;
     --accent-foreground: 0 0% 15%;
 
     --destructive: 0 72% 51%;
@@ -32,14 +32,14 @@
 
     --border: 30 10% 85%;
     --input: 30 10% 85%;
-    --ring: 40 45% 72%;
+    --ring: 26 31% 60%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --gold: 40 45% 72%;
-    --gold-light: 40 45% 80%;
-    --gold-dark: 40 45% 60%;
+    --gold: 26 31% 60%;
+    --gold-light: 27 37% 67%;
+    --gold-dark: 29 27% 48%;
     --cream: 30 20% 95%;
     --charcoal: 0 0% 15%;
     --charcoal-light: 0 0% 25%;
@@ -54,16 +54,16 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
-    --shadow-gold: 0 4px 24px hsla(40, 45%, 72%, 0.25);
+    --shadow-gold: 0 4px 24px hsla(26, 31%, 60%, 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 40 45% 72%;
+    --sidebar-primary: 26 31% 60%;
     --sidebar-primary-foreground: 0 0% 15%;
     --sidebar-accent: 30 15% 90%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 30 10% 85%;
-    --sidebar-ring: 40 45% 72%;
+    --sidebar-ring: 26 31% 60%;
   }
 
   .dark {
@@ -85,7 +85,7 @@
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 40 45% 72%;
+    --accent: 26 31% 60%;
     --accent-foreground: 0 0% 15%;
 
     --destructive: 0 62% 30%;
@@ -93,7 +93,7 @@
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 40 45% 72%;
+    --ring: 26 31% 60%;
   }
 }
 
