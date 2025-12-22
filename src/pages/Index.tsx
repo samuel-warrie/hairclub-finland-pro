@@ -87,9 +87,9 @@ const Index = () => {
               />
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9]">
-              HAIR CLUB
-              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mt-1 sm:mt-2 tracking-wide uppercase">Finland</span>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-primary-foreground tracking-tight leading-[0.9] flex flex-col items-center gap-1 sm:gap-2">
+              <img src="/logo_smaller-picsart-backgroundchanger copy.png" alt="Hair Club" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal tracking-wide uppercase">Finland</span>
             </h1>
             
             <motion.p
