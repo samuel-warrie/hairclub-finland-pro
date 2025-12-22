@@ -137,7 +137,7 @@ const About = () => {
             <div className="bg-card border border-border/50 overflow-hidden">
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                  src="/image.png"
                   alt="Kasim Cevirelin"
                   className="w-full h-full object-cover"
                 />
