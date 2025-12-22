@@ -131,7 +131,8 @@
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-br from-[#e5d4b8] via-[#d4b896] via-[#c9a982] to-[#b89968] bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background: linear-gradient(180deg, #caa78a 0%, #b8957a 40%, #9d7a5a 100%);
   }
 
   .btn-primary {
@@ -142,12 +143,12 @@
            transition-all duration-300
            hover:shadow-gold
            active:scale-[0.98];
-    background: linear-gradient(135deg, #d4b896 0%, #c9a982 50%, #b89968 100%);
+    background: linear-gradient(180deg, #caa78a 0%, #b8957a 50%, #9d7a5a 100%);
     color: hsl(0 0% 15%);
   }
 
   .btn-primary:hover {
-    background: linear-gradient(135deg, #c9a982 0%, #b89968 50%, #a88856 100%);
+    background: linear-gradient(180deg, #b8957a 0%, #9d7a5a 50%, #8b6f54 100%);
   }
 
   .btn-secondary {
@@ -209,7 +210,7 @@
 
   .label-text {
     @apply uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[10px] sm:text-xs font-medium;
-    background: linear-gradient(135deg, #d4b896 0%, #c9a982 50%, #b89968 100%);
+    background: linear-gradient(180deg, #caa78a 0%, #b8957a 50%, #9d7a5a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -234,7 +235,7 @@
   /* Decorative line */
   .decorative-line {
     @apply w-8 sm:w-12 h-px;
-    background: linear-gradient(90deg, #d4b896 0%, #c9a982 50%, #b89968 100%);
+    background: linear-gradient(90deg, #caa78a 0%, #b8957a 50%, #9d7a5a 100%);
   }
 
   /* Form inputs */
