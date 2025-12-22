@@ -89,20 +89,20 @@ const Index = () => {
 
             <h1 className="font-heading font-semibold tracking-tight leading-[0.9] flex flex-col items-center gap-0">
               <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase" style={{ color: '#D4AF7A' }}>
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase text-gradient-rose-gold">
                   HAIR
                 </span>
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase" style={{ color: '#D4AF7A' }}>
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase text-gradient-rose-gold">
                   CLUB
                 </span>
               </div>
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-[0.5em] uppercase" style={{ color: '#D4AF7A' }}>
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-[0.5em] uppercase text-gradient-rose-gold">
                 FINLAND
               </span>
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase" style={{ color: '#D4AF7A' }}>
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase text-gradient-rose-gold">
                 PARTURI-KAMPAAMO
               </span>
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-widest uppercase" style={{ color: '#D4AF7A' }}>
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-widest uppercase text-gradient-rose-gold">
                 EST. 2012
               </span>
             </h1>
