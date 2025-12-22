@@ -55,9 +55,6 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <p className="text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground/50 uppercase">
-              Finland
-            </p>
           </Link>
 
           {/* Desktop Navigation */}
