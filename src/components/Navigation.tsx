@@ -74,9 +74,9 @@ const Navigation = () => {
                 className="relative group"
               >
                 <span className={`text-[13px] font-medium tracking-wider uppercase transition-colors duration-300 ${
-                  location.pathname === link.path 
-                    ? 'text-accent' 
-                    : 'text-foreground/80 hover:text-foreground'
+                  location.pathname === link.path
+                    ? 'text-accent'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}>
                   {link.name}
                 </span>
