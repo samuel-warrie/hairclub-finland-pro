@@ -91,6 +91,12 @@ const Index = () => {
               <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] uppercase" style={{ color: '#D4AF7A' }}>
                 HAIR CLUB
               </span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-[0.3em] uppercase" style={{ color: '#D4AF7A' }}>
+                PARTURI KAMPAMO
+              </span>
+              <span className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-widest uppercase text-primary-foreground opacity-80">
+                EST. 2012
+              </span>
               <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal tracking-wide uppercase text-primary-foreground">Finland</span>
             </h1>
             
