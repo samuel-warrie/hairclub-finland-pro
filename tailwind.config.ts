@@ -80,8 +80,8 @@ export default {
       },
       boxShadow: {
         'subtle': '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06)',
-        'gold': '0 4px 24px hsla(174, 56%, 33%, 0.25)',
-        'gold-lg': '0 8px 40px hsla(174, 56%, 33%, 0.35)',
+        'gold': '0 4px 24px hsla(35, 35%, 65%, 0.25)',
+        'gold-lg': '0 8px 40px hsla(35, 35%, 65%, 0.35)',
       },
       keyframes: {
         "accordion-down": {

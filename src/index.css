@@ -24,22 +24,22 @@
     --muted: 30 15% 88%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 174 56% 33%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 35 35% 65%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 30 10% 85%;
     --input: 30 10% 85%;
-    --ring: 174 56% 33%;
+    --ring: 35 35% 65%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --gold: 174 56% 33%;
-    --gold-light: 174 56% 43%;
-    --gold-dark: 174 56% 28%;
+    --gold: 35 35% 65%;
+    --gold-light: 35 35% 75%;
+    --gold-dark: 35 35% 55%;
     --cream: 30 20% 95%;
     --charcoal: 0 0% 15%;
     --charcoal-light: 0 0% 25%;
@@ -54,16 +54,16 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
-    --shadow-gold: 0 4px 24px hsla(174, 56%, 33%, 0.25);
+    --shadow-gold: 0 4px 24px hsla(35, 35%, 65%, 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 174 56% 33%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 35 35% 65%;
+    --sidebar-primary-foreground: 0 0% 15%;
     --sidebar-accent: 30 15% 90%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 30 10% 85%;
-    --sidebar-ring: 174 56% 33%;
+    --sidebar-ring: 35 35% 65%;
   }
 
   .dark {
@@ -85,15 +85,15 @@
     --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 174 56% 33%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 35 35% 65%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 174 56% 33%;
+    --ring: 35 35% 65%;
   }
 }
 
@@ -131,7 +131,7 @@
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-teal-600 via-teal-700 to-teal-800 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 bg-clip-text text-transparent;
   }
 
   .btn-primary {
