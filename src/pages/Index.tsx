@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <main className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] sm:h-[85vh] flex items-center justify-center overflow-hidden pt-20 md:pt-28 lg:pt-32">
         {/* Background Video */}
         <video
           ref={videoRef}
