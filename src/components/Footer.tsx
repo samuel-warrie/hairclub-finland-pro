@@ -130,6 +130,11 @@ const Footer = () => {
                   <span className="text-destructive/80">Closed</span>
                 </div>
               </div>
+              <div className="pt-2 sm:pt-3 border-t border-primary-foreground/10">
+                <p className="text-[10px] sm:text-xs text-amber-500 font-medium">
+                  Holiday Closure: Dec 24 – Jan 1
+                </p>
+              </div>
               <div className="pt-1 sm:pt-2">
                 <span className="text-[10px] sm:text-xs text-accent font-medium tracking-wide uppercase">
                   Walk-ins Welcome
