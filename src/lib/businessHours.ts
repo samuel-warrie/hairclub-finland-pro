@@ -7,11 +7,11 @@ export interface BusinessHoursInfo {
 }
 
 const BUSINESS_HOURS = {
-  monday: { open: 9, close: 18 },
-  tuesday: { open: 9, close: 18 },
-  wednesday: { open: 9, close: 18 },
-  thursday: { open: 9, close: 18 },
-  friday: { open: 9, close: 18 },
+  monday: { open: 10, close: 18 },
+  tuesday: { open: 10, close: 18 },
+  wednesday: { open: 10, close: 18 },
+  thursday: { open: 10, close: 18 },
+  friday: { open: 10, close: 18 },
   saturday: null,
   sunday: null,
 };
@@ -34,13 +34,13 @@ const getNextOpeningTime = (currentDate: Date): string => {
   const currentDay = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek] as keyof typeof BUSINESS_HOURS;
 
   if (isHolidayPeriod(currentDate)) {
-    return 'Opens January 2nd at 9:00 AM';
+    return 'Opens January 2nd at 10:00 AM';
   }
 
   const todayHours = BUSINESS_HOURS[currentDay];
 
   if (todayHours && hours < todayHours.open) {
-    return 'Opens today at 9:00 AM';
+    return 'Opens today at 10:00 AM';
   }
 
   let daysToAdd = 1;
@@ -61,10 +61,10 @@ const getNextOpeningTime = (currentDate: Date): string => {
 
     if (nextDayHours) {
       if (daysToAdd === 1) {
-        return 'Opens tomorrow at 9:00 AM';
+        return 'Opens tomorrow at 10:00 AM';
       } else {
         const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        return `Opens ${dayNames[nextDayOfWeek]} at 9:00 AM`;
+        return `Opens ${dayNames[nextDayOfWeek]} at 10:00 AM`;
       }
     }
 
@@ -73,7 +73,7 @@ const getNextOpeningTime = (currentDate: Date): string => {
     nextDate.setDate(nextDate.getDate() + daysToAdd);
   }
 
-  return 'Opens Monday at 9:00 AM';
+  return 'Opens Monday at 10:00 AM';
 };
 
 export const getBusinessStatus = (): BusinessHoursInfo => {
@@ -82,7 +82,7 @@ export const getBusinessStatus = (): BusinessHoursInfo => {
   if (isHolidayPeriod(now)) {
     return {
       status: 'closed',
-      message: 'Closed for holidays - Opens January 2nd at 9:00 AM',
+      message: 'Closed for holidays - Opens January 2nd at 10:00 AM',
       isHolidayClosure: true,
     };
   }
