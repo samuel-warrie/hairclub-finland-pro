@@ -22,13 +22,13 @@ const Footer = () => {
               Experience the art of grooming in the heart of Oulu.
             </p>
             <a
-              href="https://instagram.com/thehairclubfinland"
+              href="https://www.instagram.com/hairclubfinland/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs sm:text-sm text-accent hover:text-accent/80 transition-colors"
             >
               <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              @thehairclubfinland
+              @hairclubfinland
             </a>
           </div>
 

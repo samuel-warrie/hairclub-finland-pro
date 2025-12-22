@@ -201,13 +201,13 @@ const Gallery = () => {
               </p>
             </div>
             <a
-              href="https://instagram.com/thehairclubfinland"
+              href="https://www.instagram.com/hairclubfinland/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
             >
               <Instagram className="w-4 h-4" />
-              @thehairclubfinland
+              @hairclubfinland
             </a>
           </motion.div>
         </div>
