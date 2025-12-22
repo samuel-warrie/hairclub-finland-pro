@@ -12,7 +12,7 @@ const BUSINESS_HOURS = {
   wednesday: { open: 9, close: 18 },
   thursday: { open: 9, close: 18 },
   friday: { open: 9, close: 18 },
-  saturday: { open: 9, close: 17 },
+  saturday: null,
   sunday: null,
 };
 
