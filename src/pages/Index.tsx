@@ -96,7 +96,7 @@ const Index = () => {
                   CLUB
                 </span>
               </div>
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase mt-4 sm:mt-6" style={{ color: '#D4AF7A' }}>
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase mt-1 sm:mt-2" style={{ color: '#D4AF7A' }}>
                 PARTURI-KAMPAAMO
               </span>
               <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-widest uppercase" style={{ color: '#D4AF7A' }}>
