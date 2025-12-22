@@ -96,6 +96,9 @@ const Index = () => {
                   CLUB
                 </span>
               </div>
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-[0.5em] uppercase mt-2" style={{ color: '#D4AF7A' }}>
+                FINLAND
+              </span>
               <span className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.3em] uppercase mt-1 sm:mt-2" style={{ color: '#D4AF7A' }}>
                 PARTURI-KAMPAAMO
               </span>
