@@ -26,7 +26,7 @@ const About = () => {
       <HeroBanner
         title="Our Story"
         subtitle="Where tradition meets modern style"
-        image="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80"
+        image="/background1.jpg"
       />
 
       {/* Story Section */}

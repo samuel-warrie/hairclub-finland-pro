@@ -10,7 +10,7 @@ const Services = () => {
       <HeroBanner
         title="Our Services"
         subtitle="Expert grooming tailored to your style"
-        image="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80"
+        image="/background1.jpg"
       />
 
       {/* Services Grid */}

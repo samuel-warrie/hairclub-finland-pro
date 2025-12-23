@@ -75,7 +75,7 @@ const Gallery = () => {
       <HeroBanner
         title="Gallery"
         subtitle="Our work speaks for itself"
-        image="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=1920&q=80"
+        image="/background1.jpg"
       />
 
       {/* Carousel Section */}

@@ -40,7 +40,7 @@ const Contact = () => {
       <HeroBanner
         title="Contact Us"
         subtitle="We'd love to hear from you"
-        image="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=1920&q=80"
+        image="/background1.jpg"
       />
 
       {/* Contact Section */}
