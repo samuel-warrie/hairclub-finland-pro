@@ -139,6 +139,14 @@ const translations = {
       followUs: 'Follow Us',
       rights: 'All rights reserved',
     },
+    serviceNames: {
+      'Premium Haircut': 'Premium Haircut',
+      'Classic Haircut': 'Classic Haircut',
+      'Salon Haircut': 'Salon Haircut',
+      'Single Color': 'Single Color',
+      'Special Occasion Styling': 'Special Occasion Styling',
+      'Blow Dry Styling': 'Blow Dry Styling',
+    },
   },
   fi: {
     nav: {
@@ -234,6 +242,14 @@ const translations = {
       quickLinks: 'Pikalinkit',
       followUs: 'Seuraa Meitä',
       rights: 'Kaikki oikeudet pidätetään',
+    },
+    serviceNames: {
+      'Premium Haircut': 'Premium Hiustenleikkuu',
+      'Classic Haircut': 'Klassinen Hiustenleikkuu',
+      'Salon Haircut': 'Salonki Hiustenleikkuu',
+      'Single Color': 'Yksivärinen Värjäys',
+      'Special Occasion Styling': 'Juhlatyyli',
+      'Blow Dry Styling': 'Föönaus',
     },
   },
 };

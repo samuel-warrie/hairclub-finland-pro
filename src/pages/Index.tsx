@@ -197,7 +197,7 @@ const Index = () => {
                 {featuredServices.map((service) => (
                   <ServiceListItem
                     key={service.id}
-                    title={service.title}
+                    title={t(`serviceNames.${service.title}`)}
                     price={service.price}
                   />
                 ))}
