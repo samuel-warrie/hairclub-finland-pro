@@ -201,7 +201,7 @@ const translations = {
       welcome: 'Tervetuloa',
       fullServiceTitle: 'Täyden Palvelun',
       barberShop: 'Parturi-Kampaamo',
-      intro: 'Oulun sydämessä sijaitseva Hair Club Finland yhdistää perinteiset parturitekniikat ja modernit tyylitekniikat. Yli 15 vuoden kokemuksella tarjoamme tarkkoja leikkauksia, asiantuntevaa partahoitoa ja henkilökohtaista palvelua.',
+      intro: 'Oulun sydämessä sijaitseva Hair Club Finland yhdistää perinteiset parturitekniikat ja modernit tyylit. Yli 15 vuoden kokemuksella tarjoamme tarkkoja leikkauksia, asiantuntevaa partahoitoa ja henkilökohtaista palvelua.',
       learnStory: 'Lue Tarinaamme',
       ourExpertise: 'Asiantuntemuksemme',
       services: 'Palvelut',
