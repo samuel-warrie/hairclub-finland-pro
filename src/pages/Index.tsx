@@ -321,10 +321,6 @@ const Index = () => {
                         <span>{t('home.mondayFriday')}</span>
                         <span>10:00 – 18:00</span>
                       </div>
-                      <div className="flex justify-between gap-6 sm:gap-12">
-                        <span>{t('home.saturdaySunday')}</span>
-                        <span className="text-destructive/80">{t('home.closed')}</span>
-                      </div>
                     </div>
                   </div>
                 </div>

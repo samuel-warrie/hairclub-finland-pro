@@ -106,10 +106,6 @@ const Contact = () => {
                           <span>10:00 – 18:00</span>
                         </div>
                       ))}
-                      <div className="flex justify-between text-muted-foreground pt-2 border-t border-border">
-                        <span>{t('contact.saturday')} – {t('contact.sunday')}</span>
-                        <span className="text-destructive">{t('contact.closed')}</span>
-                      </div>
                     </div>
                   </div>
                 </div>

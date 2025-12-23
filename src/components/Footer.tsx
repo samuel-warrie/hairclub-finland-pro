@@ -114,14 +114,6 @@ const Footer = () => {
                   <span>{t('footer.monFri')}</span>
                   <span>10:00 – 18:00</span>
                 </div>
-                <div className="flex justify-between gap-4">
-                  <span>{t('footer.saturday')}</span>
-                  <span className="text-destructive/80">{t('footer.closed')}</span>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <span>{t('footer.sunday')}</span>
-                  <span className="text-destructive/80">{t('footer.closed')}</span>
-                </div>
               </div>
               <div className="pt-2 sm:pt-3 border-t border-primary-foreground/10">
                 <p className="text-[10px] sm:text-xs text-amber-500 font-medium">
