@@ -308,7 +308,7 @@ const translations = {
       sunday: 'Sunnuntai',
       closed: 'Suljettu',
       holidayClosure: 'Loma-ajan Sulkeminen: 24.12 – 1.1',
-      walkIns: 'Walk-in Asiakkaat Tervetulleita',
+      walkIns: 'Tervetuloa Ilman Ajanvarausta',
       rights: 'Kaikki oikeudet pidätetään',
       crafted: 'Valmistettu huolella Oulussa',
       open: 'Avoinna Nyt',
