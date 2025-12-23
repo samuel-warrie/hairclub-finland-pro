@@ -1,31 +1,34 @@
 import { motion } from 'framer-motion';
 import { Award, Users, Heart } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   const values = [
     {
       icon: Award,
-      title: 'Excellence',
-      description: 'We pursue perfection in every cut, every style, and every interaction with our clients.',
+      title: t('about.excellence'),
+      description: t('about.excellenceDesc'),
     },
     {
       icon: Users,
-      title: 'Community',
-      description: 'More than a barbershop — a gathering place where everyone feels welcome and valued.',
+      title: t('about.community'),
+      description: t('about.communityDesc'),
     },
     {
       icon: Heart,
-      title: 'Passion',
-      description: 'Our love for the craft drives us to continuously learn and improve our skills.',
+      title: t('about.passion'),
+      description: t('about.passionDesc'),
     },
   ];
 
   return (
     <main>
       <HeroBanner
-        title="Our Story"
-        subtitle="Where tradition meets modern style"
+        title={t('about.ourStory')}
+        subtitle={t('about.subtitle')}
         image="/background1.jpg"
       />
 
@@ -44,26 +47,14 @@ const About = () => {
                 <div className="flex justify-center">
                   <div className="decorative-line" />
                 </div>
-                <span className="label-text">Since 2012</span>
-                <h2 className="heading-xl">The Hair Club Story</h2>
+                <span className="label-text">{t('about.since2012')}</span>
+                <h2 className="heading-xl">{t('about.storyTitle')}</h2>
               </div>
-              
+
               <div className="space-y-6 body-lg text-left">
-                <p>
-                  Located in central Oulu, Hair Club Finland blends classic barber traditions 
-                  with modern trends. Our shop is more than just a place to get a haircut — it's 
-                  a sanctuary where craftsmanship meets community.
-                </p>
-                <p>
-                  Founded with a vision to bring world-class grooming services to the heart 
-                  of Finland, we've built our reputation on attention to detail, personalized 
-                  service, and an unwavering commitment to making every client look and feel 
-                  their absolute best.
-                </p>
-                <p>
-                  Whether you're looking for a classic cut, a modern fade, or expert beard 
-                  styling, our team brings years of experience and passion to every service.
-                </p>
+                <p>{t('about.storyText1')}</p>
+                <p>{t('about.storyText2')}</p>
+                <p>{t('about.storyText3')}</p>
               </div>
             </motion.div>
           </div>
@@ -83,8 +74,8 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">What Drives Us</span>
-              <h2 className="heading-lg">Our Values</h2>
+              <span className="label-text">{t('about.whatDrivesUs')}</span>
+              <h2 className="heading-lg">{t('about.ourValues')}</h2>
             </motion.div>
           </div>
 
@@ -122,8 +113,8 @@ const About = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">Meet the Expert</span>
-              <h2 className="heading-lg">Our Team</h2>
+              <span className="label-text">{t('about.meetTheExpert')}</span>
+              <h2 className="heading-lg">{t('about.ourTeam')}</h2>
             </motion.div>
           </div>
 
@@ -144,12 +135,9 @@ const About = () => {
               </div>
               <div className="p-6 sm:p-8 text-center">
                 <h3 className="font-heading text-2xl font-medium mb-1">Kasim Cevirelin</h3>
-                <p className="label-text text-xs mb-6">Owner & Master Barber</p>
+                <p className="label-text text-xs mb-6">{t('about.ownerRole')}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  With over 15 years of experience in the industry, Kasim brings unparalleled 
-                  expertise and passion to every haircut. His dedication to the craft and 
-                  commitment to client satisfaction has made Hair Club Finland a destination 
-                  for those seeking the best in grooming services.
+                  {t('about.ownerBio')}
                 </p>
               </div>
             </div>

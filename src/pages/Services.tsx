@@ -3,16 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import HeroBanner from '@/components/HeroBanner';
 import ServiceListItem from '@/components/ServiceListItem';
 import { serviceCategories, getServicesByCategory } from '@/data/services';
+import { servicesTranslations } from '@/data/servicesTranslations';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState(serviceCategories[0]);
   const currentServices = getServicesByCategory(activeCategory);
 
   return (
     <main>
       <HeroBanner
-        title="Our Services"
-        subtitle="Expert grooming tailored to your style"
+        title={t('services.title')}
+        subtitle={t('services.subtitle')}
         image="/background1.jpg"
       />
 
@@ -29,11 +32,10 @@ const Services = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">What We Offer</span>
-              <h2 className="heading-lg">Complete Grooming Services</h2>
+              <span className="label-text">{t('services.whatWeOffer')}</span>
+              <h2 className="heading-lg">{t('services.completeGrooming')}</h2>
               <p className="body-md">
-                From classic cuts to modern styling, we offer a comprehensive range of professional
-                grooming services. Browse our services by category below.
+                {t('services.description')}
               </p>
             </motion.div>
           </div>
@@ -60,7 +62,7 @@ const Services = () => {
                     }
                   `}
                 >
-                  {category}
+                  {servicesTranslations[language].categories[category]}
                 </button>
               ))}
             </div>
@@ -79,14 +81,18 @@ const Services = () => {
               <div className="p-4 sm:p-6 lg:p-8">
                 <div className="mb-6 sm:mb-8">
                   <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-card-foreground">
-                    {activeCategory}
+                    {servicesTranslations[language].categories[activeCategory]}
                   </h3>
                   <div className="decorative-line mt-3" />
                 </div>
 
                 <div>
                   {currentServices.map((service) => (
-                    <ServiceListItem key={service.id} {...service} />
+                    <ServiceListItem
+                      key={service.id}
+                      title={servicesTranslations[language].services[service.title] || service.title}
+                      price={service.price}
+                    />
                   ))}
                 </div>
               </div>
@@ -108,9 +114,9 @@ const Services = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <h2 className="heading-lg">Ready for Your Perfect Look?</h2>
+              <h2 className="heading-lg">{t('services.readyTitle')}</h2>
               <p className="text-primary-foreground/70 text-lg">
-                Walk in anytime during our business hours and let our experts take care of you.
+                {t('services.readyDesc')}
               </p>
             </div>
           </motion.div>

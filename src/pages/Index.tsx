@@ -4,12 +4,13 @@ import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import ServiceListItem from '@/components/ServiceListItem';
 import { featuredServices } from '@/data/services';
+import { servicesTranslations } from '@/data/servicesTranslations';
 import { galleryPreview } from '@/data/gallery';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -197,7 +198,7 @@ const Index = () => {
                 {featuredServices.map((service) => (
                   <ServiceListItem
                     key={service.id}
-                    title={t(`serviceNames.${service.title}`)}
+                    title={servicesTranslations[language].services[service.title] || service.title}
                     price={service.price}
                   />
                 ))}

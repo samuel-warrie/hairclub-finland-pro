@@ -4,8 +4,11 @@ import { MapPin, Clock, Send, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import HeroBanner from '@/components/HeroBanner';
 import { services } from '@/data/services';
+import { servicesTranslations } from '@/data/servicesTranslations';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -27,8 +30,8 @@ const Contact = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    toast.success('Request sent successfully!', {
-      description: 'We will get back to you soon. For immediate service, please call us.',
+    toast.success(t('contact.successTitle'), {
+      description: t('contact.successDesc'),
     });
 
     setFormData({ name: '', phone: '', service: '', message: '' });
@@ -38,8 +41,8 @@ const Contact = () => {
   return (
     <main>
       <HeroBanner
-        title="Contact Us"
-        subtitle="We'd love to hear from you"
+        title={t('contact.title')}
+        subtitle={t('contact.subtitle')}
         image="/background1.jpg"
       />
 
@@ -57,11 +60,10 @@ const Contact = () => {
             >
               <div className="space-y-3 sm:space-y-4">
                 <div className="decorative-line" />
-                <span className="label-text">Get In Touch</span>
-                <h2 className="heading-lg">Visit Our Shop</h2>
+                <span className="label-text">{t('contact.getInTouch')}</span>
+                <h2 className="heading-lg">{t('contact.visitShop')}</h2>
                 <p className="body-md max-w-md">
-                  Have questions? We're here to help. Drop by during business hours 
-                  or reach out through any of the channels below.
+                  {t('contact.description')}
                 </p>
               </div>
 
@@ -78,14 +80,14 @@ const Contact = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">
-                      Location
+                      {t('contact.location')}
                     </h3>
                     <p className="text-muted-foreground text-sm">
                       Kajaaninkatu 36<br />
                       90100 Oulu, Finland
                     </p>
                     <span className="inline-flex items-center gap-1 text-accent text-xs mt-3 font-medium">
-                      View on Map <ArrowRight className="w-3 h-3" />
+                      {t('contact.viewOnMap')} <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </a>
@@ -96,17 +98,17 @@ const Contact = () => {
                     <Clock className="w-5 h-5 text-accent-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-heading text-lg font-medium mb-3">Business Hours</h3>
+                    <h3 className="font-heading text-lg font-medium mb-3">{t('contact.businessHours')}</h3>
                     <div className="space-y-2 text-sm">
-                      {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
+                      {['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].map((day) => (
                         <div key={day} className="flex justify-between text-muted-foreground">
-                          <span>{day}</span>
+                          <span>{t(`contact.${day}`)}</span>
                           <span>10:00 – 18:00</span>
                         </div>
                       ))}
                       <div className="flex justify-between text-muted-foreground pt-2 border-t border-border">
-                        <span>Saturday – Sunday</span>
-                        <span className="text-destructive">Closed</span>
+                        <span>{t('contact.saturday')} – {t('contact.sunday')}</span>
+                        <span className="text-destructive">{t('contact.closed')}</span>
                       </div>
                     </div>
                   </div>
@@ -123,9 +125,9 @@ const Contact = () => {
             >
               <div className="bg-card border border-border p-5 sm:p-6 md:p-8">
                 <div className="space-y-2 mb-6 sm:mb-8">
-                  <h3 className="heading-sm">Send a Message</h3>
+                  <h3 className="heading-sm">{t('contact.sendMessage')}</h3>
                   <p className="text-sm text-muted-foreground">
-                    Fill out the form below and we'll get back to you.
+                    {t('contact.formDescription')}
                   </p>
                 </div>
                 
@@ -133,7 +135,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
-                        Full Name *
+                        {t('contact.fullName')} *
                       </label>
                       <input
                         type="text"
@@ -143,13 +145,13 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="input-field"
-                        placeholder="Your name"
+                        placeholder={t('contact.yourName')}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="phone" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
-                        Phone Number *
+                        {t('contact.phoneNumber')} *
                       </label>
                       <input
                         type="tel"
@@ -159,14 +161,14 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="input-field"
-                        placeholder="Your phone"
+                        placeholder={t('contact.yourPhone')}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="service" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
-                      Service Interest
+                      {t('contact.serviceInterest')}
                     </label>
                     <select
                       id="service"
@@ -175,10 +177,10 @@ const Contact = () => {
                       onChange={handleChange}
                       className="input-field appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%20width%3d%2224%22%20height%3d%2224%22%20viewBox%3d%220%200%2024%2024%22%20fill%3d%22none%22%20stroke%3d%22%23999%22%20stroke-width%3d%222%22%20stroke-linecap%3d%22round%22%20stroke-linejoin%3d%22round%22%3e%3cpolyline%20points%3d%226%209%2012%2015%2018%209%22%3e%3c%2fpolyline%3e%3c%2fsvg%3e')] bg-no-repeat bg-[right_1rem_center] bg-[length:1rem]"
                     >
-                      <option value="">Select a service</option>
+                      <option value="">{t('contact.selectService')}</option>
                       {services.map((service) => (
                         <option key={service.id} value={service.title}>
-                          {service.title} – {service.price}
+                          {servicesTranslations[language].services[service.title] || service.title} – {service.price}
                         </option>
                       ))}
                     </select>
@@ -186,7 +188,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-xs font-medium tracking-wider uppercase mb-2 text-muted-foreground">
-                      Message
+                      {t('contact.message')}
                     </label>
                     <textarea
                       id="message"
@@ -195,7 +197,7 @@ const Contact = () => {
                       onChange={handleChange}
                       rows={4}
                       className="input-field resize-none"
-                      placeholder="Any special requests or questions?"
+                      placeholder={t('contact.messagePlaceholder')}
                     />
                   </div>
 
@@ -205,11 +207,11 @@ const Contact = () => {
                     className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
-                      'Sending...'
+                      t('contact.sending')
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Send Message
+                        {t('contact.sendButton')}
                       </>
                     )}
                   </button>
