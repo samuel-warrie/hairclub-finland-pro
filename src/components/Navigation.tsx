@@ -96,18 +96,30 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-50 p-2 -mr-2 hover:bg-accent/10 rounded-md transition-colors duration-200"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
+          {/* Mobile Language & Menu Button */}
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'fi' : 'en')}
+              className="relative z-50 p-2 hover:bg-accent/10 rounded-md transition-colors duration-200"
+              aria-label="Toggle language"
+            >
+              <div className="flex items-center gap-1.5">
+                <Languages className="w-5 h-5 text-foreground" />
+                <span className="text-sm font-medium uppercase text-foreground">{language.toUpperCase()}</span>
+              </div>
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative z-50 p-2 -mr-2 hover:bg-accent/10 rounded-md transition-colors duration-200"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 
