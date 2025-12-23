@@ -55,9 +55,6 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           {/* Logo */}
           <Link to="/" className="relative z-10">
-            <span className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground hover:text-accent transition-colors duration-300">
-              Hair Club Finland
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
