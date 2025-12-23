@@ -349,7 +349,7 @@ const Index = () => {
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
-                  src="/fddc6eb6-d795-4557-b19d-5bc6ef0dcbfd.jpg"
+                  src="/image copy.png"
                   alt="Hair Club Finland Interior"
                   className="w-full h-full object-cover"
                 />
