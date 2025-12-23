@@ -1,8 +1,8 @@
 export const galleryImages = [
   {
     id: 1,
-    src: '/84c5092f-7ed9-4e2e-997b-d9ab06d40365.jpg',
-    alt: 'Professional barber providing precision haircut',
+    src: '/image copy.png',
+    alt: 'Hair Club Finland interior with brick wall and styling stations',
   },
   {
     id: 2,
