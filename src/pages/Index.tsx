@@ -5,9 +5,11 @@ import { useEffect, useRef } from 'react';
 import ServiceListItem from '@/components/ServiceListItem';
 import { featuredServices } from '@/data/services';
 import { galleryPreview } from '@/data/gallery';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -113,7 +115,7 @@ const Index = () => {
               transition={{ delay: 0.6 }}
               className="text-primary-foreground/70 text-sm sm:text-base md:text-lg max-w-md sm:max-w-lg mx-auto font-light px-2"
             >
-              Traditional craftsmanship meets contemporary style in the heart of Oulu
+              {t('hero.subtitle')}
             </motion.p>
 
             <motion.div
@@ -123,10 +125,10 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-4"
             >
               <Link to="/services" className="btn-primary">
-                View Services
+                {t('hero.viewServices')}
               </Link>
               <Link to="/contact" className="btn-outline-light">
-                Contact Us
+                {t('hero.contactUs')}
               </Link>
             </motion.div>
           </motion.div>
@@ -147,20 +149,18 @@ const Index = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">Welcome</span>
+              <span className="label-text">{t('home.welcome')}</span>
               <h2 className="heading-xl">
-                Full Service<br />Barber Shop
+                {t('home.fullServiceTitle')}<br />{t('home.barberShop')}
               </h2>
               <p className="body-lg max-w-2xl mx-auto">
-                Located in the heart of Oulu, Hair Club Finland is where classic barbering traditions 
-                meet modern styling techniques. With over 15 years of experience, we deliver 
-                precision cuts, expert beard grooming, and personalized service.
+                {t('home.intro')}
               </p>
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 text-accent font-medium text-sm uppercase tracking-wider hover:gap-3 transition-all duration-300 group"
               >
-                Learn Our Story
+                {t('home.learnStory')}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
@@ -181,8 +181,8 @@ const Index = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">Our Expertise</span>
-              <h2 className="heading-lg">Services</h2>
+              <span className="label-text">{t('home.ourExpertise')}</span>
+              <h2 className="heading-lg">{t('home.services')}</h2>
             </motion.div>
           </div>
 
@@ -212,7 +212,7 @@ const Index = () => {
             className="text-center mt-10 sm:mt-12 md:mt-14"
           >
             <Link to="/services" className="btn-secondary">
-              View All Services
+              {t('home.viewAllServices')}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -232,8 +232,8 @@ const Index = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">Our Work</span>
-              <h2 className="heading-lg">Gallery</h2>
+              <span className="label-text">{t('home.ourWork')}</span>
+              <h2 className="heading-lg">{t('home.gallery')}</h2>
             </motion.div>
           </div>
 
@@ -267,7 +267,7 @@ const Index = () => {
               to="/gallery"
               className="inline-flex items-center gap-2 text-accent font-medium text-sm uppercase tracking-wider hover:gap-3 transition-all duration-300"
             >
-              View Full Gallery
+              {t('home.viewFullGallery')}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -287,8 +287,8 @@ const Index = () => {
             >
               <div className="space-y-3 sm:space-y-4">
                 <div className="decorative-line" />
-                <span className="label-text">Find Us</span>
-                <h2 className="heading-lg">Location & Hours</h2>
+                <span className="label-text">{t('home.findUs')}</span>
+                <h2 className="heading-lg">{t('home.locationHours')}</h2>
               </div>
 
               <div className="space-y-4 sm:space-y-5 lg:space-y-6">
@@ -302,7 +302,7 @@ const Index = () => {
                     <MapPin className="w-5 h-5 text-accent-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">Address</h3>
+                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">{t('home.address')}</h3>
                     <p className="text-primary-foreground/70">
                       Kajaaninkatu 36<br />90100 Oulu, Finland
                     </p>
@@ -314,15 +314,15 @@ const Index = () => {
                     <Clock className="w-5 h-5 text-accent-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg font-medium mb-3">Business Hours</h3>
+                    <h3 className="font-heading text-lg font-medium mb-3">{t('home.businessHours')}</h3>
                     <div className="text-primary-foreground/70 space-y-1 text-xs sm:text-sm">
                       <div className="flex justify-between gap-6 sm:gap-12">
-                        <span>Monday – Friday</span>
+                        <span>{t('home.mondayFriday')}</span>
                         <span>10:00 – 18:00</span>
                       </div>
                       <div className="flex justify-between gap-6 sm:gap-12">
-                        <span>Saturday – Sunday</span>
-                        <span className="text-destructive/80">Closed</span>
+                        <span>{t('home.saturdaySunday')}</span>
+                        <span className="text-destructive/80">{t('home.closed')}</span>
                       </div>
                     </div>
                   </div>
@@ -331,10 +331,10 @@ const Index = () => {
 
               <div className="bg-charcoal-light/30 border border-primary-foreground/10 p-5 sm:p-6">
                 <p className="font-heading text-xl font-medium text-accent mb-2">
-                  Walk-ins Welcome
+                  {t('home.walkIns')}
                 </p>
                 <p className="text-primary-foreground/60 text-sm">
-                  Simply drop by during business hours.
+                  {t('home.walkInsDesc')}
                 </p>
               </div>
             </motion.div>

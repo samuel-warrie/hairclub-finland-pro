@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.services'), path: '/services' },
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.gallery'), path: '/gallery' },
+    { name: t('nav.contact'), path: '/contact' },
   ];
 
   useEffect(() => {
@@ -79,10 +81,18 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Language Toggle & CTA Button */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'fi' : 'en')}
+              className="flex items-center gap-2 px-3 py-2 text-xs font-medium tracking-wider uppercase transition-colors hover:text-accent"
+              aria-label="Toggle language"
+            >
+              <Languages className="w-4 h-4" />
+              <span>{language === 'en' ? 'FI' : 'EN'}</span>
+            </button>
             <Link to="/contact" className="btn-primary text-xs py-3 px-5">
-              Contact Us
+              {t('hero.contactUs')}
             </Link>
           </div>
 
@@ -136,8 +146,16 @@ const Navigation = () => {
                 transition={{ delay: navLinks.length * 0.1 + 0.2 }}
                 className="mt-8 flex flex-col items-center gap-6"
               >
+                <button
+                  onClick={() => setLanguage(language === 'en' ? 'fi' : 'en')}
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium tracking-wider uppercase transition-colors hover:text-accent border border-border rounded"
+                  aria-label="Toggle language"
+                >
+                  <Languages className="w-5 h-5" />
+                  <span>{language === 'en' ? 'Suomi' : 'English'}</span>
+                </button>
                 <Link to="/contact" className="btn-primary text-base px-8 py-3">
-                  Contact Us
+                  {t('hero.contactUs')}
                 </Link>
               </motion.div>
             </div>
