@@ -205,4 +205,11 @@ export const getServicesByCategory = (category: string) => {
   return services.filter(service => service.category === category);
 };
 
-export const featuredServices = services.slice(0, 6);
+export const featuredServices = [
+  services[0],  // Premium Haircut - Barber Services
+  services[1],  // Classic Haircut - Barber Services
+  services[7],  // Salon Haircut - Salon Services
+  services[8],  // Single Color - Color Services
+  services[15], // Special Occasion Styling - Styling Services
+  services[12], // Blow Dry Styling - Styling Services
+];
