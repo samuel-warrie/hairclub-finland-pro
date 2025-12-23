@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { MapPin, Clock, Instagram, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBusinessStatus } from '@/lib/businessHours';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const [status, setStatus] = useState(getBusinessStatus());
 
@@ -26,8 +28,7 @@ const Footer = () => {
               HAIR CLUB FINLAND
             </h3>
             <p className="text-xs sm:text-sm text-primary-foreground/70 leading-relaxed max-w-xs hidden sm:block">
-              Where traditional craftsmanship meets contemporary style.
-              Experience the art of grooming in the heart of Oulu.
+              {t('footer.tagline')}
             </p>
             <a
               href="https://www.instagram.com/hairclubfinland/?hl=en"
@@ -43,15 +44,15 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="space-y-4 sm:space-y-6">
             <h4 className="text-[10px] sm:text-xs font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary-foreground/50">
-              Navigation
+              {t('footer.navigation')}
             </h4>
             <nav className="flex flex-col gap-2 sm:gap-3">
               {[
-                { name: 'Home', path: '/' },
-                { name: 'Services', path: '/services' },
-                { name: 'About', path: '/about' },
-                { name: 'Gallery', path: '/gallery' },
-                { name: 'Contact', path: '/contact' },
+                { name: t('nav.home'), path: '/' },
+                { name: t('nav.services'), path: '/services' },
+                { name: t('nav.about'), path: '/about' },
+                { name: t('nav.gallery'), path: '/gallery' },
+                { name: t('nav.contact'), path: '/contact' },
               ].map((link) => (
                 <Link
                   key={link.path}
@@ -67,7 +68,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="space-y-4 sm:space-y-6">
             <h4 className="text-[10px] sm:text-xs font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary-foreground/50">
-              Contact
+              {t('footer.contact')}
             </h4>
             <div className="space-y-3 sm:space-y-4">
               <a
@@ -85,7 +86,7 @@ const Footer = () => {
           {/* Hours */}
           <div className="space-y-4 sm:space-y-6">
             <h4 className="text-[10px] sm:text-xs font-medium tracking-[0.15em] sm:tracking-[0.2em] uppercase text-primary-foreground/50">
-              Hours
+              {t('footer.hours')}
             </h4>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2 text-xs sm:text-sm">
@@ -103,31 +104,33 @@ const Footer = () => {
                   status.status === 'closing-soon' ? 'text-amber-500' :
                   'text-red-500'
                 }`}>
-                  {status.message}
+                  {status.status === 'open' ? t('footer.open') :
+                   status.status === 'closing-soon' ? t('footer.closingSoon') :
+                   t('footer.closedNow')}
                 </span>
               </div>
               <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-primary-foreground/70">
                 <div className="flex justify-between gap-4">
-                  <span>Mon – Fri</span>
+                  <span>{t('footer.monFri')}</span>
                   <span>10:00 – 18:00</span>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <span>Saturday</span>
-                  <span className="text-destructive/80">Closed</span>
+                  <span>{t('footer.saturday')}</span>
+                  <span className="text-destructive/80">{t('footer.closed')}</span>
                 </div>
                 <div className="flex justify-between gap-4">
-                  <span>Sunday</span>
-                  <span className="text-destructive/80">Closed</span>
+                  <span>{t('footer.sunday')}</span>
+                  <span className="text-destructive/80">{t('footer.closed')}</span>
                 </div>
               </div>
               <div className="pt-2 sm:pt-3 border-t border-primary-foreground/10">
                 <p className="text-[10px] sm:text-xs text-amber-500 font-medium">
-                  Holiday Closure: Dec 24 – Jan 1
+                  {t('footer.holidayClosure')}
                 </p>
               </div>
               <div className="pt-1 sm:pt-2">
                 <span className="text-[10px] sm:text-xs text-accent font-medium tracking-wide uppercase">
-                  Walk-ins Welcome
+                  {t('footer.walkIns')}
                 </span>
               </div>
             </div>
@@ -140,10 +143,10 @@ const Footer = () => {
         <div className="container-custom py-4 sm:py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
             <p className="text-[10px] sm:text-xs text-primary-foreground/50 text-center sm:text-left">
-              © {currentYear} Hair Club Finland. All rights reserved.
+              © {currentYear} Hair Club Finland. {t('footer.rights')}.
             </p>
             <p className="text-[10px] sm:text-xs text-primary-foreground/40">
-              Crafted with care in Oulu
+              {t('footer.crafted')}
             </p>
           </div>
         </div>

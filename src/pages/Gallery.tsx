@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X, Play, Pause, Instagram } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
 import { galleryImages } from '@/data/gallery';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Gallery = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -73,8 +75,8 @@ const Gallery = () => {
   return (
     <main>
       <HeroBanner
-        title="Gallery"
-        subtitle="Our work speaks for itself"
+        title={t('gallery.title')}
+        subtitle={t('gallery.subtitle')}
         image="/background1.jpg"
       />
 
@@ -91,8 +93,8 @@ const Gallery = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <span className="label-text">Featured Work</span>
-              <h2 className="heading-lg">Our Showcase</h2>
+              <span className="label-text">{t('gallery.featuredWork')}</span>
+              <h2 className="heading-lg">{t('gallery.ourShowcase')}</h2>
             </motion.div>
           </div>
 
@@ -118,14 +120,14 @@ const Gallery = () => {
             <button
               onClick={prevSlide}
               className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-background"
-              aria-label="Previous slide"
+              aria-label={t('gallery.previousSlide')}
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               onClick={nextSlide}
               className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-sm w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-background"
-              aria-label="Next slide"
+              aria-label={t('gallery.nextSlide')}
             >
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
@@ -134,7 +136,7 @@ const Gallery = () => {
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm w-10 h-10 flex items-center justify-center hover:bg-background transition-colors"
-              aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+              aria-label={isPlaying ? t('gallery.pauseSlideshow') : t('gallery.playSlideshow')}
             >
               {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
             </button>
@@ -173,7 +175,7 @@ const Gallery = () => {
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   index === currentIndex ? 'w-8 bg-accent' : 'w-1.5 bg-border hover:bg-muted-foreground/30'
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`${t('gallery.goToSlide')} ${index + 1}`}
               />
             ))}
           </div>
@@ -194,10 +196,9 @@ const Gallery = () => {
                 <div className="decorative-line" />
               </div>
               <Instagram className="w-10 h-10 mx-auto text-accent" />
-              <h2 className="heading-md">Follow Our Journey</h2>
+              <h2 className="heading-md">{t('gallery.followJourney')}</h2>
               <p className="text-primary-foreground/70">
-                See more of our work, behind-the-scenes moments, and style inspiration 
-                on Instagram.
+                {t('gallery.followDescription')}
               </p>
             </div>
             <a
@@ -227,7 +228,7 @@ const Gallery = () => {
             <button
               onClick={closeLightbox}
               className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors z-10"
-              aria-label="Close lightbox"
+              aria-label={t('gallery.closeLightbox')}
             >
               <X className="w-6 h-6" />
             </button>
@@ -241,14 +242,14 @@ const Gallery = () => {
             <button
               onClick={(e) => { e.stopPropagation(); prevLightbox(); }}
               className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors"
-              aria-label="Previous image"
+              aria-label={t('gallery.previousImage')}
             >
               <ChevronLeft className="w-8 h-8" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); nextLightbox(); }}
               className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-primary-foreground hover:text-accent transition-colors"
-              aria-label="Next image"
+              aria-label={t('gallery.nextImage')}
             >
               <ChevronRight className="w-8 h-8" />
             </button>
