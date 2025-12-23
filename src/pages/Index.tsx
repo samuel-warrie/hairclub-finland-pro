@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import ServiceCard from '@/components/ServiceCard';
 import { featuredServices } from '@/data/services';
@@ -122,12 +122,11 @@ const Index = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 sm:pt-4"
             >
-              <a href="tel:+358458961423" className="btn-primary">
-                <Phone className="w-4 h-4" />
-                Call Now
-              </a>
-              <Link to="/services" className="btn-outline-light">
+              <Link to="/services" className="btn-primary">
                 View Services
+              </Link>
+              <Link to="/contact" className="btn-outline-light">
+                Contact Us
               </Link>
             </motion.div>
           </motion.div>
@@ -326,7 +325,7 @@ const Index = () => {
                   Walk-ins Welcome
                 </p>
                 <p className="text-primary-foreground/60 text-sm">
-                  No appointment needed. Simply drop by during business hours.
+                  Simply drop by during business hours.
                 </p>
               </div>
             </motion.div>

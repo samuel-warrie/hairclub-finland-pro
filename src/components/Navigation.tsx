@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
@@ -81,15 +81,8 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-6">
-            <a
-              href="tel:+358458961423"
-              className="flex items-center gap-2 text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              045 896 1423
-            </a>
             <Link to="/contact" className="btn-primary text-xs py-3 px-5">
-              Book Now
+              Contact Us
             </Link>
           </div>
 
@@ -143,15 +136,8 @@ const Navigation = () => {
                 transition={{ delay: navLinks.length * 0.1 + 0.2 }}
                 className="mt-8 flex flex-col items-center gap-6"
               >
-                <a
-                  href="tel:+358458961423"
-                  className="flex items-center gap-3 text-lg text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Phone className="w-5 h-5" />
-                  045 896 1423
-                </a>
                 <Link to="/contact" className="btn-primary text-base px-8 py-3">
-                  Book Now
+                  Contact Us
                 </Link>
               </motion.div>
             </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Instagram, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { MapPin, Clock, Instagram, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBusinessStatus } from '@/lib/businessHours';
 
@@ -70,13 +70,6 @@ const Footer = () => {
               Contact
             </h4>
             <div className="space-y-3 sm:space-y-4">
-              <a
-                href="tel:+358458961423"
-                className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-primary-foreground/70 hover:text-accent transition-colors group"
-              >
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent" />
-                <span>045 896 1423</span>
-              </a>
               <a
                 href="https://maps.google.com/?q=Kajaaninkatu+36,+90100+Oulu,+Finland"
                 target="_blank"

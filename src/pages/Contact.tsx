@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MapPin, Clock, Send, ArrowRight } from 'lucide-react';
+import { MapPin, Clock, Send, ArrowRight } from 'lucide-react';
 import { toast } from 'sonner';
 import HeroBanner from '@/components/HeroBanner';
 import { services } from '@/data/services';
@@ -86,25 +86,6 @@ const Contact = () => {
                     </p>
                     <span className="inline-flex items-center gap-1 text-accent text-xs mt-3 font-medium">
                       View on Map <ArrowRight className="w-3 h-3" />
-                    </span>
-                  </div>
-                </a>
-
-                {/* Phone */}
-                <a
-                  href="tel:+358458961423"
-                  className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50 transition-all duration-300 hover:border-accent/30 hover:bg-secondary group"
-                >
-                  <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-accent-foreground" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">
-                      Phone
-                    </h3>
-                    <p className="text-muted-foreground">045 896 1423</p>
-                    <span className="inline-flex items-center gap-1 text-accent text-xs mt-3 font-medium">
-                      Tap to Call <ArrowRight className="w-3 h-3" />
                     </span>
                   </div>
                 </a>
@@ -234,41 +215,12 @@ const Contact = () => {
                   </button>
                 </form>
 
-                <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-border text-center">
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Prefer to call directly?
-                  </p>
-                  <a
-                    href="tel:+358458961423"
-                    className="inline-flex items-center gap-2 text-lg font-heading font-medium text-accent hover:text-accent/80 transition-colors"
-                  >
-                    <Phone className="w-5 h-5" />
-                    045 896 1423
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Walk-in CTA */}
-      <section className="section-padding-sm bg-primary text-primary-foreground">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-xl mx-auto space-y-3 sm:space-y-4"
-          >
-            <h3 className="heading-md">No Appointment Needed</h3>
-            <p className="text-primary-foreground/70">
-              We operate on a walk-in basis. Simply drop by during our business hours 
-              and we'll take care of the rest.
-            </p>
-          </motion.div>
-        </div>
-      </section>
     </main>
   );
 };

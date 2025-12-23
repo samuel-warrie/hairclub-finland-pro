@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
 import ServiceListItem from '@/components/ServiceListItem';
 import { serviceCategories, getServicesByCategory } from '@/data/services';
@@ -111,15 +110,8 @@ const Services = () => {
               </div>
               <h2 className="heading-lg">Ready for Your Perfect Look?</h2>
               <p className="text-primary-foreground/70 text-lg">
-                Walk in anytime during our business hours. No appointment needed —
-                just come in and let our experts take care of you.
+                Walk in anytime during our business hours and let our experts take care of you.
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+358458961423" className="btn-primary">
-                <Phone className="w-4 h-4" />
-                045 896 1423
-              </a>
             </div>
           </motion.div>
         </div>
