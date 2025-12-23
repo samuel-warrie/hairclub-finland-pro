@@ -22,17 +22,6 @@ const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1 space-y-4 sm:space-y-6">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="block cursor-pointer transition-opacity hover:opacity-80"
-              aria-label="Scroll to top"
-            >
-              <img
-                src="/logo_smaller.png"
-                alt="Hair Club Finland"
-                className="h-16 sm:h-20 w-auto"
-              />
-            </button>
             <p className="text-xs sm:text-sm text-primary-foreground/70 leading-relaxed max-w-xs hidden sm:block">
               Where traditional craftsmanship meets contemporary style.
               Experience the art of grooming in the heart of Oulu.
