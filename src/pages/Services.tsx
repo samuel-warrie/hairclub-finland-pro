@@ -1,10 +1,14 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import HeroBanner from '@/components/HeroBanner';
-import ServiceCard from '@/components/ServiceCard';
+import ServiceListItem from '@/components/ServiceListItem';
 import { serviceCategories, getServicesByCategory } from '@/data/services';
 
 const Services = () => {
+  const [activeCategory, setActiveCategory] = useState(serviceCategories[0]);
+  const currentServices = getServicesByCategory(activeCategory);
+
   return (
     <main>
       <HeroBanner
@@ -30,55 +34,67 @@ const Services = () => {
               <h2 className="heading-lg">Complete Grooming Services</h2>
               <p className="body-md">
                 From classic cuts to modern styling, we offer a comprehensive range of professional
-                grooming services. Whether you are looking for a quick trim or a complete transformation,
-                our expert team is here to bring your vision to life.
+                grooming services. Browse our services by category below.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Services by Category */}
-      {serviceCategories.map((category, categoryIndex) => {
-        const categoryServices = getServicesByCategory(category);
-        if (categoryServices.length === 0) return null;
-
-        return (
-          <section
-            key={category}
-            className={`section-padding ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-secondary/30'}`}
-          >
-            <div className="container-custom">
-              {/* Category Header */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8 sm:mb-10 md:mb-12"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="decorative-line" />
-                  <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-semibold whitespace-nowrap">
-                    {category}
-                  </h2>
-                  <div className="decorative-line flex-1" />
-                </div>
-              </motion.div>
-
-              {/* Services Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
-                {categoryServices.map((service, index) => (
-                  <ServiceCard
-                    key={service.id}
-                    {...service}
-                    index={index}
-                  />
-                ))}
-              </div>
+      {/* Services Section with Tabs */}
+      <section className="section-padding bg-background">
+        <div className="container-custom max-w-5xl">
+          {/* Category Navigation */}
+          <div className="mb-8 sm:mb-12">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              {serviceCategories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`
+                    px-4 sm:px-6 py-2.5 sm:py-3 font-heading font-medium text-sm sm:text-base
+                    transition-all duration-300
+                    ${
+                      activeCategory === category
+                        ? 'bg-accent text-accent-foreground'
+                        : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
+                    }
+                  `}
+                >
+                  {category}
+                </button>
+              ))}
             </div>
-          </section>
-        );
-      })}
+          </div>
+
+          {/* Services List */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-card border border-border/50"
+            >
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="mb-6 sm:mb-8">
+                  <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-card-foreground">
+                    {activeCategory}
+                  </h3>
+                  <div className="decorative-line mt-3" />
+                </div>
+
+                <div>
+                  {currentServices.map((service) => (
+                    <ServiceListItem key={service.id} {...service} />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-primary-foreground">
