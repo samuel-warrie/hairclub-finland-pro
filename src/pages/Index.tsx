@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
-import ServiceCard from '@/components/ServiceCard';
+import ServiceListItem from '@/components/ServiceListItem';
 import { featuredServices } from '@/data/services';
 import { galleryPreview } from '@/data/gallery';
 
@@ -170,7 +170,7 @@ const Index = () => {
 
       {/* Featured Services */}
       <section className="section-padding bg-secondary">
-        <div className="container-custom">
+        <div className="container-custom max-w-5xl">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -186,15 +186,24 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {featuredServices.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                {...service}
-                index={index}
-              />
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-card border border-border/50"
+          >
+            <div className="p-4 sm:p-6 lg:p-8">
+              <div>
+                {featuredServices.map((service) => (
+                  <ServiceListItem
+                    key={service.id}
+                    title={service.title}
+                    price={service.price}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
