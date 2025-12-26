@@ -26,23 +26,28 @@ export const galleryImages = [
   },
   {
     id: 6,
-    src: '/ee677410-2729-4622-a225-b6b0061aa5bb.jpg',
+    src: '/gallery-6.png',
     alt: 'Professional barbering service in action',
   },
   {
     id: 7,
-    src: '/c67cea6b-5570-400c-82c4-f960d42ee660.jpg',
+    src: '/gallery-7.png',
     alt: 'Expert hair cutting and styling',
   },
   {
     id: 8,
-    src: '/ec5e25da-28bc-4603-9b99-e64de43a75dd.jpg',
+    src: '/gallery-8.png',
     alt: 'Modern hair grooming techniques',
   },
   {
     id: 9,
-    src: '/d809ccaa-8b4f-4dbe-85c8-bdceebc46943.jpg',
+    src: '/gallery-9.png',
     alt: 'Professional haircut and beard styling',
+  },
+  {
+    id: 10,
+    src: '/gallery-10.png',
+    alt: 'Stylish haircut and grooming',
   },
 ];
 
