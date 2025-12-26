@@ -238,24 +238,38 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-3 md:gap-4">
-            {galleryPreview.map((image, index) => (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group relative aspect-[4/5] overflow-hidden"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors duration-500" />
-              </motion.div>
-            ))}
+          <div className="relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex gap-3 sm:gap-4"
+              animate={{
+                x: [0, -1920],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 25,
+                  ease: "linear",
+                },
+              }}
+            >
+              {[...galleryPreview, ...galleryPreview].map((image, index) => (
+                <div
+                  key={`${image.id}-${index}`}
+                  className="group relative w-[200px] sm:w-[240px] md:w-[280px] aspect-[4/5] overflow-hidden flex-shrink-0"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors duration-500" />
+                </div>
+              ))}
+            </motion.div>
           </div>
 
           <motion.div
