@@ -12,6 +12,7 @@ const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [carouselWidth, setCarouselWidth] = useState(1920);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const { t, language } = useLanguage();
 
   useEffect(() => {
@@ -266,7 +267,7 @@ const Index = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="flex gap-3 sm:gap-4"
-              animate={{
+              animate={isCarouselPaused ? {} : {
                 x: [0, -carouselWidth],
               }}
               transition={{
@@ -277,6 +278,10 @@ const Index = () => {
                   ease: "linear",
                 },
               }}
+              onMouseEnter={() => setIsCarouselPaused(true)}
+              onMouseLeave={() => setIsCarouselPaused(false)}
+              onTouchStart={() => setIsCarouselPaused(true)}
+              onTouchEnd={() => setIsCarouselPaused(false)}
             >
               {[...galleryPreview, ...galleryPreview].map((image, index) => (
                 <div
