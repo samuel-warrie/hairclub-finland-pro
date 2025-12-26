@@ -21,9 +21,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <div className="min-h-screen flex flex-col">
           <Navigation />
-          <div className="flex-1">
+          <main id="main-content" className="flex-1">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<Services />} />
@@ -32,7 +35,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </div>
+          </main>
           <Footer />
           <ScrollToTop />
         </div>

@@ -15,17 +15,75 @@ const Contact = () => {
     service: '',
     message: '',
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateField = (name: string, value: string) => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return t('contact.nameRequired') || 'Name is required';
+        if (value.trim().length < 2) return t('contact.nameTooShort') || 'Name must be at least 2 characters';
+        return '';
+      case 'phone':
+        if (!value.trim()) return t('contact.phoneRequired') || 'Phone number is required';
+        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+        if (!phoneRegex.test(value)) return t('contact.phoneInvalid') || 'Please enter a valid phone number';
+        if (value.replace(/\D/g, '').length < 7) return t('contact.phoneTooShort') || 'Phone number is too short';
+        return '';
+      default:
+        return '';
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    }));
+
+    if (touched[name]) {
+      const error = validateField(name, value);
+      setErrors((prev) => ({
+        ...prev,
+        [name]: error,
+      }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
+
+    const error = validateField(name, value);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const newErrors: Record<string, string> = {};
+    Object.keys(formData).forEach((key) => {
+      if (key === 'name' || key === 'phone') {
+        const error = validateField(key, formData[key as keyof typeof formData]);
+        if (error) newErrors[key] = error;
+      }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setTouched({ name: true, phone: true, service: true, message: true });
+      toast.error('Please fix the errors in the form');
+      return;
+    }
+
     setIsSubmitting(true);
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -35,6 +93,8 @@ const Contact = () => {
     });
 
     setFormData({ name: '', phone: '', service: '', message: '' });
+    setErrors({});
+    setTouched({});
     setIsSubmitting(false);
   };
 
@@ -139,10 +199,18 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         required
-                        className="input-field"
+                        className={`input-field ${errors.name && touched.name ? 'border-destructive focus:border-destructive focus:ring-destructive/20' : ''}`}
                         placeholder={t('contact.yourName')}
+                        aria-invalid={errors.name && touched.name ? 'true' : 'false'}
+                        aria-describedby={errors.name && touched.name ? 'name-error' : undefined}
                       />
+                      {errors.name && touched.name && (
+                        <p id="name-error" className="text-destructive text-xs mt-1.5" role="alert">
+                          {errors.name}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -155,10 +223,18 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                         required
-                        className="input-field"
+                        className={`input-field ${errors.phone && touched.phone ? 'border-destructive focus:border-destructive focus:ring-destructive/20' : ''}`}
                         placeholder={t('contact.yourPhone')}
+                        aria-invalid={errors.phone && touched.phone ? 'true' : 'false'}
+                        aria-describedby={errors.phone && touched.phone ? 'phone-error' : undefined}
                       />
+                      {errors.phone && touched.phone && (
+                        <p id="phone-error" className="text-destructive text-xs mt-1.5" role="alert">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                   </div>
 

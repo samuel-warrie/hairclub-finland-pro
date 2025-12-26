@@ -123,6 +123,21 @@
   ::selection {
     @apply bg-accent/20 text-foreground;
   }
+
+  /* Focus styling for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  a:focus-visible, button:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Skip to main content link */
+  .skip-link {
+    @apply fixed top-0 left-0 z-[1000] px-4 py-2 bg-accent text-accent-foreground font-medium;
+    @apply -translate-y-full focus:translate-y-0 transition-transform;
+  }
 }
 
 @layer components {
@@ -133,6 +148,15 @@
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
     background: linear-gradient(180deg, #caa78a 0%, #b8957a 40%, #9d7a5a 100%);
+  }
+
+  .text-brand-gold {
+    color: #D4AF7A;
+  }
+
+  .text-brand-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(180deg, #d4b5a0 0%, #c9a68b 50%, #b8957a 100%);
   }
 
   .btn-primary {

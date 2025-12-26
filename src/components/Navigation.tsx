@@ -56,7 +56,9 @@ const Navigation = () => {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           {/* Logo */}
-          <Link to="/" className="relative z-10">
+          <Link to="/" className="relative z-10 font-heading font-bold text-lg sm:text-xl tracking-tight">
+            <span className="text-brand-gradient">HAIR CLUB</span>
+            <span className="text-xs sm:text-sm font-light tracking-[0.3em] ml-2 text-muted-foreground">FI</span>
           </Link>
 
           {/* Desktop Navigation */}

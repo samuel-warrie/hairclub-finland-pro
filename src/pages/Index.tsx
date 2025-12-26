@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ServiceListItem from '@/components/ServiceListItem';
 import { featuredServices } from '@/data/services';
 import { servicesTranslations } from '@/data/servicesTranslations';
@@ -10,6 +10,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [carouselWidth, setCarouselWidth] = useState(1920);
   const { t, language } = useLanguage();
 
   useEffect(() => {
@@ -38,6 +40,25 @@ const Index = () => {
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const updateCarouselWidth = () => {
+      if (carouselRef.current) {
+        const width = carouselRef.current.scrollWidth / 2;
+        setCarouselWidth(width);
+      }
+    };
+
+    updateCarouselWidth();
+    window.addEventListener('resize', updateCarouselWidth);
+
+    const timeout = setTimeout(updateCarouselWidth, 100);
+
+    return () => {
+      window.removeEventListener('resize', updateCarouselWidth);
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -90,7 +111,7 @@ const Index = () => {
               />
             </div>
 
-            <h1 className="font-heading font-semibold tracking-tight leading-[0.9] flex flex-col items-center gap-0" style={{ color: '#D4AF7A' }}>
+            <h1 className="font-heading font-semibold tracking-tight leading-[0.9] flex flex-col items-center gap-0 text-brand-gold">
               <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                 <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase">
                   HAIR
@@ -240,12 +261,13 @@ const Index = () => {
 
           <div className="relative overflow-hidden">
             <motion.div
+              ref={carouselRef}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="flex gap-3 sm:gap-4"
               animate={{
-                x: [0, -1920],
+                x: [0, -carouselWidth],
               }}
               transition={{
                 x: {
