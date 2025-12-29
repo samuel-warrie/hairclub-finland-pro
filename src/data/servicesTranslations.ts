@@ -34,7 +34,7 @@ export const servicesTranslations = {
     categories: {
       'Barber Services': 'Parturi',
       'Salon Services': 'Kampaamo',
-      'Color Services': 'Värijäys',
+      'Color Services': 'Värjäys',
       'Styling Services': 'Kampaukset',
       'Add-ons': 'Lisäpalvelut',
     },
