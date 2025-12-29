@@ -40,8 +40,8 @@ export const servicesTranslations = {
     },
     services: {
       'Premium Haircut': 'Hiustenleikkaus PREMIUM',
-      'Classic Haircut': 'CLASSIC',
-      'Basic Haircut': 'BASIC',
+      'Classic Haircut': 'Hiustenleikkaus classic',
+      'Basic Haircut': 'Hiustenleikkaus basic',
       'Beard Styling': 'Parran muotoilu',
       'Traditional Shave': 'Amerikkalainen parranajo',
       'Hair + Beard Combo': 'Hiukset + parta',
