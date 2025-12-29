@@ -234,7 +234,7 @@ const translations = {
       whatWeOffer: 'Tarjoamme',
       completeGrooming: 'Parturi- & kampaamopalvelut',
       description: 'Klassisista leikkauksista moderneihin tyyleihin ja värjäyksiin tarjoamme kattavan valikoiman ammattimaisia parturi- ja kampaamopalveluita. Selaa palveluitamme alta.',
-      readyDesc: 'Tule käymään aukioloaikojen aikana ja anna asiantuntijoidemme huolehtia sinusta.',
+      readyDesc: 'Tule käymään aukioloaikojen aikana ja anna meidän huolehtia sinusta.',
     },
     about: {
       title: 'Meistä',
