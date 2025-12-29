@@ -104,8 +104,8 @@ const Navigation = () => {
               aria-label="Toggle language"
             >
               <div className="flex items-center gap-1.5">
-                <Languages className="w-5 h-5 text-foreground" />
-                <span className="text-sm font-medium uppercase text-foreground">{language.toUpperCase()}</span>
+                <Languages className={`w-5 h-5 ${isScrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`} />
+                <span className={`text-sm font-medium uppercase ${isScrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`}>{language.toUpperCase()}</span>
               </div>
             </button>
             <button
@@ -114,9 +114,9 @@ const Navigation = () => {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-6 h-6 text-foreground" />
+                <X className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`} />
               ) : (
-                <Menu className="w-6 h-6 text-foreground" />
+                <Menu className={`w-6 h-6 ${isScrolled ? 'text-foreground' : 'text-white drop-shadow-lg'}`} />
               )}
             </button>
           </div>
