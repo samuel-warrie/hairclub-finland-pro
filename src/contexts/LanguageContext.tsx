@@ -241,7 +241,7 @@ const translations = {
     about: {
       title: 'Meistä',
       subtitle: 'Ammattimaiset parturi- ja kampaamopalvelut',
-      ourStory: 'Tarinaamme',
+      ourStory: 'Tarinamme',
       since2012: 'Vuodesta 2012',
       storyTitle: 'Hair Clubin Tarina',
       storyText1: 'Hair Club on hiusten leikkauksen laatuun, miellyttävään asiakaspalveluun ja saavutettavuuteen erikoistuva parturi-kampaamo. Olemme toimineet Oulussa vuodesta 2012 ja meille pääset aina myös ilman ajanvarausta. Tarjoamme monipuolisia parturi- ja kampaamopalveluita, ja asiakkaamme arvostavat meissä erityisesti aitoa läsnäoloa, ammattitaitoa, kokemusta ja kattavia palveluita.',
