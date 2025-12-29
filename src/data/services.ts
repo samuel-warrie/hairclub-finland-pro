@@ -76,7 +76,7 @@ export const services: Service[] = [
   },
   {
     id: 'salon-haircut',
-    title: 'Salon Haircut',
+    title: 'Salon hair cut for women',
     description: 'Professional salon styling with precision cutting techniques. Perfect for longer hair and advanced styling needs.',
     price: '€59.90',
     icon: Scissors,
