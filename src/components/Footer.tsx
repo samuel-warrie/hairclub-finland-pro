@@ -165,7 +165,15 @@ const Footer = () => {
               © {currentYear} Hair Club Finland. {t('footer.rights')}.
             </p>
             <p className="text-[10px] sm:text-xs text-primary-foreground/40">
-              {t('footer.crafted')}
+              {t('footer.crafted')}{' '}
+              <a
+                href="https://gergsai.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                {t('footer.craftedBy')}
+              </a>
             </p>
           </div>
         </div>
