@@ -93,7 +93,6 @@ const translations = {
       whatWeOffer: 'What We Offer',
       completeGrooming: 'Complete Barber & Salon Services',
       description: 'From classic cuts to modern styling and coloring, we offer a comprehensive range of professional barber and salon services. Browse our services by category below.',
-      readyDesc: 'Walk in anytime during our business hours and let our expert take care of you.',
     },
     about: {
       title: 'About Us',
@@ -233,8 +232,7 @@ const translations = {
       subtitle: 'Ammattimaiset parturi- ja kampaamopalvelut tyyliisi räätälöitynä',
       whatWeOffer: 'Tarjoamme',
       completeGrooming: 'Parturi- & kampaamopalvelut',
-      description: 'Klassisista leikkauksista moderneihin tyyleihin ja värjäyksiin tarjoamme kattavan valikoiman ammattimaisia parturi- ja kampaamopalveluita. Selaa palveluitamme alta.'
-      readyDesc: 'Tule käymään aukioloaikojen aikana ja anna asiantuntijoidemme huolehtia sinusta.',
+      description: 'Klassisista leikkauksista moderneihin tyyleihin ja värjäyksiin tarjoamme kattavan valikoiman ammattimaisia parturi- ja kampaamopalveluita. Selaa palveluitamme alta.',
     },
     about: {
       title: 'Meistä',
