@@ -1,4 +1,4 @@
-export type BusinessStatus = 'open' | 'closing-soon' | 'closed';
+export type BusinessStatus = 'open' | 'opening-soon' | 'closing-soon' | 'closed';
 
 export interface BusinessHoursInfo {
   status: BusinessStatus;
@@ -17,12 +17,13 @@ const BUSINESS_HOURS = {
 };
 
 const CLOSING_SOON_MINUTES = 60;
+const OPENING_SOON_MINUTES = 30;
 
 const isHolidayPeriod = (date: Date): boolean => {
   const month = date.getMonth();
   const day = date.getDate();
 
-  if (month === 11 && day >= 24) return true;
+  if (month === 11 && day >= 24 && day <= 28) return true;
   if (month === 0 && day === 1) return true;
 
   return false;
@@ -106,7 +107,25 @@ export const getBusinessStatus = (): BusinessHoursInfo => {
   const openTimeInMinutes = todayHours.open * 60;
   const closeTimeInMinutes = todayHours.close * 60;
 
-  if (currentTimeInMinutes < openTimeInMinutes || currentTimeInMinutes >= closeTimeInMinutes) {
+  if (currentTimeInMinutes < openTimeInMinutes) {
+    const minutesUntilOpening = openTimeInMinutes - currentTimeInMinutes;
+
+    if (minutesUntilOpening <= OPENING_SOON_MINUTES) {
+      return {
+        status: 'opening-soon',
+        message: `Opening soon - Opens at ${todayHours.open}:00 ${todayHours.open >= 12 ? 'PM' : 'AM'}`,
+        isHolidayClosure: false,
+      };
+    }
+
+    return {
+      status: 'closed',
+      message: `Closed - ${getNextOpeningTime(now)}`,
+      isHolidayClosure: false,
+    };
+  }
+
+  if (currentTimeInMinutes >= closeTimeInMinutes) {
     return {
       status: 'closed',
       message: `Closed - ${getNextOpeningTime(now)}`,
@@ -119,7 +138,7 @@ export const getBusinessStatus = (): BusinessHoursInfo => {
   if (minutesUntilClosing <= CLOSING_SOON_MINUTES) {
     return {
       status: 'closing-soon',
-      message: `Closing soon - Closes at ${todayHours.close}:00 ${todayHours.close >= 12 ? 'PM' : 'AM'}`,
+      message: `Closing soon - Closes at ${todayHours.close > 12 ? todayHours.close - 12 : todayHours.close}:00 ${todayHours.close >= 12 ? 'PM' : 'AM'}`,
       isHolidayClosure: false,
     };
   }

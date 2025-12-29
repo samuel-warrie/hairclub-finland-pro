@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Instagram, Facebook, CheckCircle2, AlertCircle, XCircle } from 'lucide-react';
+import { MapPin, Clock, Instagram, Facebook, CheckCircle2, AlertCircle, XCircle, Clock3 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBusinessStatus } from '@/lib/businessHours';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -12,7 +12,7 @@ const Footer = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setStatus(getBusinessStatus());
-    }, 60000);
+    }, 30000);
 
     return () => clearInterval(interval);
   }, []);
@@ -115,6 +115,9 @@ const Footer = () => {
                 {status.status === 'open' && (
                   <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-500" />
                 )}
+                {status.status === 'opening-soon' && (
+                  <Clock3 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500" />
+                )}
                 {status.status === 'closing-soon' && (
                   <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
                 )}
@@ -123,10 +126,12 @@ const Footer = () => {
                 )}
                 <span className={`font-medium ${
                   status.status === 'open' ? 'text-green-500' :
+                  status.status === 'opening-soon' ? 'text-blue-500' :
                   status.status === 'closing-soon' ? 'text-amber-500' :
                   'text-red-500'
                 }`}>
                   {status.status === 'open' ? t('footer.open') :
+                   status.status === 'opening-soon' ? t('footer.openingSoon') :
                    status.status === 'closing-soon' ? t('footer.closingSoon') :
                    t('footer.closedNow')}
                 </span>
