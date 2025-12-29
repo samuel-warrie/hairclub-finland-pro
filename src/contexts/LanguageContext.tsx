@@ -112,7 +112,7 @@ const translations = {
       community: 'Community',
       communityDesc: 'More than just a salon — a gathering place where everyone feels welcome and valued.',
       passion: 'Passion',
-      passionDesc: 'Our love for the craft drives us to continuously learn and improve our skills.',
+      passionDesc: 'We work with love, we are constantly training and we offer solutions to our customers individual needs. We do all kinds of hair styles and repairs.',
       meetTheExpert: 'Meet the Expert',
       ourTeam: 'Our Team',
       ownerRole: 'Owner & Master Stylist',
