@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import ServiceListItem from '@/components/ServiceListItem';
-import { featuredServices } from '@/data/services';
-import { servicesTranslations } from '@/data/servicesTranslations';
 import { galleryPreview } from '@/data/gallery';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -213,19 +210,13 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-card border border-border/50"
+            className="flex justify-center"
           >
-            <div className="p-4 sm:p-6 lg:p-8">
-              <div>
-                {featuredServices.map((service) => (
-                  <ServiceListItem
-                    key={service.id}
-                    title={servicesTranslations[language].services[service.title] || service.title}
-                    price={service.price}
-                  />
-                ))}
-              </div>
-            </div>
+            <img
+              src="/hiukset_+_parta_(1).png"
+              alt="Hair Club Finland Services"
+              className="w-full max-w-4xl h-auto"
+            />
           </motion.div>
 
           <motion.div
