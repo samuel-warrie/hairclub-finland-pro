@@ -129,12 +129,12 @@ const About = () => {
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src="/image.png"
-                  alt="Kasim Cevirelin"
+                  alt="Kasim Cevirel"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6 sm:p-8 text-center">
-                <h3 className="font-heading text-2xl font-medium mb-1">Kasim Cevirelin</h3>
+                <h3 className="font-heading text-2xl font-medium mb-1">Kasim Cevirel</h3>
                 <p className="label-text text-xs mb-6">{t('about.ownerRole')}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {t('about.ownerBio')}
