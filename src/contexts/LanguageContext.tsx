@@ -211,7 +211,7 @@ const translations = {
       welcome: 'Tervetuloa',
       fullServiceTitle: 'Täyden palvelun',
       barberShop: 'parturi-kampaamo',
-      intro: 'Hair Club on hiusten leikkauksen laatuun, tyylittelyyn, värjäyksiin, miellyttävään asiakaspalveluun ja saavutettavuuteen erikoistuva parturi-kampaamo. Olemme toimineet Oulussa vuodesta 2012 ja meille pääset aina myös ilman ajanvarausta.',
+      intro: 'Hair Club on hiusten leikkauksen laatuun,miellyttävään asiakaspalveluun ja saavutettavuuteen erikoistuva parturi-kampaamo. Olemme toimineet Oulussa vuodesta 2012 ja meille pääset aina myös ilman ajanvarausta.',
       learnStory: 'Lue Tarinaamme',
       ourExpertise: 'Asiantuntemuksemme',
       services: 'Palvelut',
