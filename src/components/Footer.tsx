@@ -103,11 +103,11 @@ const Footer = () => {
                 <span>Kajaaninkatu 36<br />90100 Oulu</span>
               </a>
               <a
-                href="tel:+358442935454"
+                href="tel:+358458961423"
                 className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-primary-foreground/70 hover:text-accent transition-colors group"
               >
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent flex-shrink-0 mt-0.5" />
-                <span>+358 44 293 5454</span>
+                <span>045 896 1423</span>
               </a>
             </div>
           </div>

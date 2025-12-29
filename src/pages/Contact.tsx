@@ -154,7 +154,7 @@ const Contact = () => {
 
                 {/* Phone */}
                 <a
-                  href="tel:+358442935454"
+                  href="tel:+358458961423"
                   className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50 transition-all duration-300 hover:border-accent/30 hover:bg-secondary group"
                 >
                   <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
@@ -165,7 +165,7 @@ const Contact = () => {
                       {t('contact.phone')}
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      +358 44 293 5454
+                      045 896 1423
                     </p>
                   </div>
                 </a>
