@@ -254,7 +254,7 @@ const translations = {
       community: 'Yhteisö',
       communityDesc: 'Enemmän kuin pelkkä parturi-kampaamo — kokoontumispaikka, jossa jokainen tuntee itsensä tervetulleeksi ja arvostetuksi.',
       passion: 'Intohimo',
-      passionDesc: 'Rakkautemme käsityötaitoon ajaa meitä jatkuvasti oppimaan ja parantamaan taitojamme.',
+      passionDesc: 'Teemme työtä rakkaudella, kouluttaudumme jatkuvasti ja tarjoamme ratkaisuja asiakkaiden yksilöllisiin tarpeisiin. Teemme kaikenlaisia hiustyylejä sekä korjaustöitä.',
       meetTheExpert: 'Tapaa Asiantuntija',
       ourTeam: 'Tiimimme',
       ownerRole: 'Omistaja & Mestariparturi-Kampaaja',
