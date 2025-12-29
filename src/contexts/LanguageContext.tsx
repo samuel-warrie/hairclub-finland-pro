@@ -203,7 +203,7 @@ const translations = {
       contact: 'Yhteystiedot',
     },
     hero: {
-      subtitle: 'Laadukkaat hiustenleikkaukset, miellyttävä palvelu ja saavutettavuus vuodesta 2012',
+      subtitle: 'Tarjoamme korkeaalaatuisia tuloksia, yksilöllistä palvelua ja yhteisöllistä tuntua jo vuodesta 2012.',
       viewServices: 'Katso Palvelut',
       contactUs: 'Ota Yhteyttä',
     },
