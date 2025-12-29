@@ -94,7 +94,6 @@ const Gallery = () => {
                 <div className="decorative-line" />
               </div>
               <span className="label-text">{t('gallery.featuredWork')}</span>
-              <h2 className="heading-lg">{t('gallery.ourShowcase')}</h2>
             </motion.div>
           </div>
 
