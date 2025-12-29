@@ -11,6 +11,7 @@ const Gallery = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     if (!isPlaying || lightboxOpen) return;
@@ -27,10 +28,12 @@ const Gallery = () => {
   }, []);
 
   const nextSlide = useCallback(() => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
   }, []);
 
   const prevSlide = useCallback(() => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   }, []);
 
@@ -44,10 +47,12 @@ const Gallery = () => {
   };
 
   const nextLightbox = () => {
+    setDirection(1);
     setLightboxIndex((prev) => (prev + 1) % galleryImages.length);
   };
 
   const prevLightbox = () => {
+    setDirection(-1);
     setLightboxIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   };
 
@@ -100,15 +105,16 @@ const Gallery = () => {
           {/* Main Carousel */}
           <div className="relative group">
             <div className="relative aspect-[4/3] sm:aspect-[16/9] max-h-[400px] sm:max-h-[500px] lg:max-h-[600px] overflow-hidden bg-muted">
-              <AnimatePresence initial={false}>
+              <AnimatePresence initial={false} custom={direction}>
                 <motion.img
                   key={currentIndex}
                   src={galleryImages[currentIndex].src}
                   alt={galleryImages[currentIndex].alt}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  custom={direction}
+                  initial={{ x: direction > 0 ? '100%' : '-100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: direction > 0 ? '-100%' : '100%' }}
+                  transition={{ type: 'tween', duration: 0.3, ease: 'easeInOut' }}
                   className="absolute inset-0 w-full h-full object-cover cursor-pointer"
                   onClick={() => openLightbox(currentIndex)}
                 />
@@ -254,15 +260,16 @@ const Gallery = () => {
             </button>
 
             {/* Image */}
-            <AnimatePresence initial={false}>
+            <AnimatePresence initial={false} custom={direction}>
               <motion.img
                 key={lightboxIndex}
                 src={galleryImages[lightboxIndex].src}
                 alt={galleryImages[lightboxIndex].alt}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
+                custom={direction}
+                initial={{ x: direction > 0 ? '100%' : '-100%', opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: direction > 0 ? '-100%' : '100%', opacity: 0 }}
+                transition={{ type: 'tween', duration: 0.25, ease: 'easeInOut' }}
                 className="max-w-[90vw] max-h-[85vh] object-contain"
                 onClick={(e) => e.stopPropagation()}
               />
