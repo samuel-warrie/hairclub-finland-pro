@@ -186,9 +186,9 @@ const translations = {
       closedNow: 'Closed',
     },
     serviceNames: {
-      'Premium Haircut': 'Premium Haircut',
-      'Classic Haircut': 'Classic Haircut',
-      'Salon Haircut': 'Salon Haircut',
+      'Premium Haircut': 'Premium haircut',
+      'Classic Haircut': 'Classic haircut',
+      'Salon Haircut': 'Salon haircut for women',
       'Single Color': 'Single Color',
       'Special Occasion Styling': 'Special Occasion Styling',
       'Blow Dry Styling': 'Blow Dry Styling',
@@ -330,7 +330,7 @@ const translations = {
     serviceNames: {
       'Premium Haircut': 'Premium Hiustenleikkuu',
       'Classic Haircut': 'Klassinen Hiustenleikkuu',
-      'Salon Haircut': 'Parturi-kampaamo Hiustenleikkuu',
+      'Salon Haircut': 'Parturi-kampaamo Naisten Hiustenleikkuu',
       'Single Color': 'Yksivärinen Värjäys',
       'Special Occasion Styling': 'Juhlatyyli',
       'Blow Dry Styling': 'Föönaus',
