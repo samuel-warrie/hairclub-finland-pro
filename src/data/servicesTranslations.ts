@@ -39,7 +39,7 @@ export const servicesTranslations = {
       'Add-ons': 'Lisäpalvelut',
     },
     services: {
-      'Premium Haircut': 'Hiustenleikkaus PREMIUM',
+      'Premium Haircut': 'Hiustenleikkaus premium',
       'Classic Haircut': 'Hiustenleikkaus classic',
       'Basic Haircut': 'Hiustenleikkaus basic',
       'Beard Styling': 'Parran muotoilu',
