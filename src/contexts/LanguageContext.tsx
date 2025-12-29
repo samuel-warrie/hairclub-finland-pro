@@ -175,7 +175,7 @@ const translations = {
       saturday: 'Saturday',
       sunday: 'Sunday',
       closed: 'Closed',
-      holidayClosure: 'Holiday Closure: Dec 24 – Dec 28. Reopening Dec 29',
+      holidayClosure: 'Closed: Jan 1, 2026',
       walkIns: 'Walk-ins Welcome',
       rights: 'All rights reserved',
       crafted: 'Made with love by',
