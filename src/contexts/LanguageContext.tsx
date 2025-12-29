@@ -261,7 +261,7 @@ const translations = {
     },
     gallery: {
       title: 'Galleria',
-      subtitle: 'Työmme puhuu puolestaan',
+      subtitle: 'Anna työmme puhua puolestaan',
       featuredWork: 'Esittelyssä',
       ourShowcase: 'Näyttelyemme',
       followJourney: 'Seuraa meitä',
