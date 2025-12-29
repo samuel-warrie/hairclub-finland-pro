@@ -249,7 +249,7 @@ const translations = {
       storyText3: 'Missään vaiheessa emme ole tinkineet palvelun laadusta, ystävällisestä asiakaspalvelusta tai rennosta kodinomaisesta tunnelmasta. Meille olet tervetulloa myös koko perheellä! Tutustu palveluihimme ja tule kokeilemaan Hair Clubin ainutlaatuinen palvelukokemusta.',
       whatDrivesUs: 'Mikä Meitä Ajaa',
       ourValues: 'Arvomme',
-      excellence: 'Erinomaisuus',
+      excellence: 'Korkea laatu',
       excellenceDesc: 'Tavoittelemme täydellisyyttä jokaisessa leikkauksessa, jokaisessa tyylistä ja jokaisessa vuorovaikutuksessa asiakkaidemme kanssa.',
       community: 'Yhteisö',
       communityDesc: 'Enemmän kuin pelkkä salonki — kokoontumispaikka, jossa jokainen tuntee itsensä tervetulleeksi ja arvostetuksi.',
