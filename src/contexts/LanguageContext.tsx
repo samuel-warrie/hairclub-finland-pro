@@ -253,7 +253,7 @@ const translations = {
       excellenceDesc: 'Tavoittelemme täydellisyyttä jokaisen palvelukokemuksen ja asiakkaan kohtaamisen kohdalla.',
       community: 'Yhteisö',
       communityDesc: 'Enemmän kuin pelkkä parturi-kampaamo — kokoontumispaikka, jossa jokainen tuntee itsensä tervetulleeksi ja arvostetuksi.',
-      passion: 'Into',
+      passion: 'intohimo',
       passionDesc: 'Rakkautemme käsityötaitoon ajaa meitä jatkuvasti oppimaan ja parantamaan taitojamme.',
       meetTheExpert: 'Tapaa Asiantuntija',
       ourTeam: 'Tiimimme',
