@@ -74,7 +74,8 @@ const translations = {
       ourExpertise: 'Our Expertise',
       services: 'Services',
       viewAllServices: 'View All Services',
-      ourWork: 'Our Work',
+      ourWork: 'Results
+        ',
       gallery: 'Gallery',
       viewFullGallery: 'View Full Gallery',
       findUs: 'Find Us',
