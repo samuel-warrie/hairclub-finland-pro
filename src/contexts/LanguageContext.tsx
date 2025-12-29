@@ -250,7 +250,7 @@ const translations = {
       whatDrivesUs: 'Mikä Meitä Ajaa',
       ourValues: 'Arvomme',
       excellence: 'Korkea laatu',
-      excellenceDesc: 'Tavoittelemme täydellisyyttä jokaisessa leikkauksessa, jokaisessa tyylistä ja jokaisessa vuorovaikutuksessa asiakkaidemme kanssa.',
+      excellenceDesc: 'Tavoittelemme täydellisyyttä jokaisen palvelukokemuksen ja asiakkaan kohtaamisen kohdalla.',
       community: 'Yhteisö',
       communityDesc: 'Enemmän kuin pelkkä parturi-kampaamo — kokoontumispaikka, jossa jokainen tuntee itsensä tervetulleeksi ja arvostetuksi.',
       passion: 'Into',
