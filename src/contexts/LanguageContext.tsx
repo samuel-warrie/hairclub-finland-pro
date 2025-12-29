@@ -293,7 +293,7 @@ const translations = {
       saturday: 'Lauantai',
       sunday: 'Sunnuntai',
       closed: 'Suljettu',
-      sendMessage: 'Lähetä Viesti',
+      sendMessage: 'Lähetä viesti',
       formDescription: 'Täytä alla oleva lomake ja palaamme asiaan.',
       fullName: 'Koko Nimi',
       phoneNumber: 'Puhelinnumero',
