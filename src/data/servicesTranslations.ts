@@ -51,7 +51,7 @@ export const servicesTranslations = {
       'Multi-Color Highlights': 'Monivärijäys',
       'Color Removal': 'Värinpoisto',
       'Highlights': 'Raidat',
-      'Hair Coloring': 'Hiusten värijäys',
+      'Hair Coloring': 'Värjäys',
       'Blow Dry Styling': 'Föonikampaus',
       'Express Blow Dry': 'Arkiföönaaus',
       'Special Occasion Styling': 'Juhlakampaus',
