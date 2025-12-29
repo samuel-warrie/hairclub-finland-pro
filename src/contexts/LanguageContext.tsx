@@ -257,7 +257,7 @@ const translations = {
       passionDesc: 'Teemme työtä rakkaudella, kouluttaudumme jatkuvasti ja tarjoamme ratkaisuja asiakkaiden yksilöllisiin tarpeisiin. Teemme kaikenlaisia hiustyylejä sekä korjaustöitä.',
       meetTheExpert: 'Tapaa Asiantuntija',
       ourTeam: 'Tiimimme',
-      ownerRole: 'Omistaja & Mestariparturi-Kampaaja',
+      ownerRole: 'Perustaja & Mestariparturi-Kampaaja',
       ownerBio: 'Kasim Cevirel tuli Suomeen nuorena miehenä kymmenen vuoden hiusalan kokemuksella ja perusti Hair Clubin vuonna 2012. Hänen omistautumisensa laadukkaaseen palveluun, ammattitaitoon ja viihtyisän tunnelman luomiseen on tehnyt Hair Club Finlandista luotetun kohteen kattaville parturi- ja kampaamopalveluille.',
     },
     gallery: {
