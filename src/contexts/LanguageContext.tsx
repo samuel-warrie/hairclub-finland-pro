@@ -74,8 +74,7 @@ const translations = {
       ourExpertise: 'Our Expertise',
       services: 'Services',
       viewAllServices: 'View All Services',
-      ourWork: 'Results
-        ',
+      ourWork: 'Results',
       gallery: 'Gallery',
       viewFullGallery: 'View Full Gallery',
       findUs: 'Find Us',
@@ -217,7 +216,7 @@ const translations = {
       ourExpertise: 'Asiantuntemuksemme',
       services: 'Palvelut',
       viewAllServices: 'Näytä Kaikki Palvelut',
-      ourWork: 'Työmme',
+      ourWork: 'Tulokset',
       gallery: 'Galleria',
       viewFullGallery: 'Näytä Koko Galleria',
       findUs: 'Löydä Meidät',
