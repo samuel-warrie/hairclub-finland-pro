@@ -115,7 +115,7 @@ const translations = {
       passionDesc: 'We work with love, we are constantly training and we offer solutions to our customers individual needs. We do all kinds of hair styles and repairs.',
       meetTheExpert: 'Meet the Expert',
       ourTeam: 'Our Team',
-      ownerRole: 'Owner & Master Stylist',
+      ownerRole: 'Founder & Master Stylist',
       ownerBio: 'Kasim Cevirel came to Finland as a young man with ten years of experience in hair styling and established Hair Club in 2012. His dedication to quality service, professionalism, and creating a welcoming atmosphere has made Hair Club Finland a trusted destination for comprehensive barber and salon services.',
     },
     gallery: {
