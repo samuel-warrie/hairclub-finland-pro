@@ -100,6 +100,22 @@ const Services = () => {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-primary text-primary-foreground">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto"
+          >
+            <p className="text-primary-foreground/90 text-lg">
+              {t('services.readyDesc')}
+            </p>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 };
