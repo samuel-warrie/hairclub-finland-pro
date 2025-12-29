@@ -317,7 +317,7 @@ const translations = {
       saturday: 'Lauantai',
       sunday: 'Sunnuntai',
       closed: 'Suljettu',
-      holidayClosure: 'Loma-ajan Sulkeminen: 24.12 – 28.12. Avautuu 29.12',
+      holidayClosure: 'Suljettu:1.1.2026',
       walkIns: 'Tervetuloa Ilman Ajanvarausta',
       rights: 'Kaikki oikeudet pidätetään',
       crafted: 'Tehty rakkaudella',
