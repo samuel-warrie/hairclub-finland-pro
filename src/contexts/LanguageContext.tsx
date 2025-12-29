@@ -61,7 +61,7 @@ const translations = {
       contact: 'Contact',
     },
     hero: {
-      subtitle: 'Quality haircuts, pleasant service, and accessibility since 2012',
+      subtitle: 'We have been offering high-quality results, personalized service, and a sense of community since 2012.',
       viewServices: 'View Services',
       contactUs: 'Contact Us',
     },
