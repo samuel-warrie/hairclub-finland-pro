@@ -114,7 +114,7 @@ const Services = () => {
               <div className="flex justify-center">
                 <div className="decorative-line" />
               </div>
-              <h2 className="heading-lg">{t('services.readyTitle')}</h2>
+            
               <p className="text-primary-foreground/70 text-lg">
                 {t('services.readyDesc')}
               </p>
