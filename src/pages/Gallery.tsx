@@ -100,7 +100,7 @@ const Gallery = () => {
           {/* Main Carousel */}
           <div className="relative group">
             <div className="relative aspect-[4/3] sm:aspect-[16/9] max-h-[400px] sm:max-h-[500px] lg:max-h-[600px] overflow-hidden bg-muted">
-              <AnimatePresence mode="wait">
+              <AnimatePresence initial={false}>
                 <motion.img
                   key={currentIndex}
                   src={galleryImages[currentIndex].src}
@@ -108,8 +108,8 @@ const Gallery = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-full h-full object-cover cursor-pointer"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover cursor-pointer"
                   onClick={() => openLightbox(currentIndex)}
                 />
               </AnimatePresence>
@@ -254,16 +254,19 @@ const Gallery = () => {
             </button>
 
             {/* Image */}
-            <motion.img
-              key={lightboxIndex}
-              src={galleryImages[lightboxIndex].src}
-              alt={galleryImages[lightboxIndex].alt}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="max-w-[90vw] max-h-[85vh] object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={lightboxIndex}
+                src={galleryImages[lightboxIndex].src}
+                alt={galleryImages[lightboxIndex].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="max-w-[90vw] max-h-[85vh] object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
