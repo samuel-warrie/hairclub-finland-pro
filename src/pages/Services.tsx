@@ -16,7 +16,7 @@ const Services = () => {
       <HeroBanner
         title={t('services.title')}
         subtitle={t('services.subtitle')}
-        image="public/headers_bg.png"
+        image="/headers_bg.png"
       />
 
       {/* Intro Section */}
