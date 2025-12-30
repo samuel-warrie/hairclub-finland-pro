@@ -67,14 +67,21 @@ const Navigation = () => {
                 to={link.path}
                 className="relative group"
               >
-                <span className={`text-[13px] font-medium tracking-wider uppercase transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-accent'
-                    : location.pathname === '/' ? 'text-muted-foreground' : 'text-accent'
-                }`}>
+                <span
+                  className={`text-base font-bold tracking-widest uppercase transition-colors duration-300 ${
+                    location.pathname === link.path
+                      ? 'text-accent'
+                      : location.pathname === '/' ? 'text-muted-foreground' : 'text-accent'
+                  }`}
+                  style={{
+                    textShadow: location.pathname !== '/' && !isScrolled
+                      ? '0 2px 8px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.9)'
+                      : 'none'
+                  }}
+                >
                   {link.name}
                 </span>
-                <span className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all duration-300 ${
                   location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'
                 }`} />
               </Link>
