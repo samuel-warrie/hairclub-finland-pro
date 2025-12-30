@@ -29,7 +29,7 @@ const About = () => {
       <HeroBanner
         title={t('about.ourStory')}
         subtitle={t('about.subtitle')}
-        image="public/headers_bg.png"
+        image="/headers_bg.png"
       />
 
       {/* Story Section */}
