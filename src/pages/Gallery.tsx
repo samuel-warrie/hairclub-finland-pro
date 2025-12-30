@@ -82,7 +82,7 @@ const Gallery = () => {
       <HeroBanner
         title={t('gallery.title')}
         subtitle={t('gallery.subtitle')}
-        image="/#413f3f_(2).jpg"
+        image="public/headers_bg.png"
       />
 
       {/* Carousel Section */}
