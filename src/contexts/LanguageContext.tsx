@@ -309,7 +309,7 @@ const translations = {
       successDesc: 'Palaamme asiaan pian. Jos tarvitset välitöntä palvelua, soita meille.',
     },
     footer: {
-      tagline: 'Laadukkaat hiustenleikkaukset, miellyttävä asiakaspalvelu ja saavutettavuus. Ilman ajanvarausta tervetulleita vuodesta 2012 Oulun sydämessä.',
+      tagline: 'Laadukasta ja mukavaa palvelua ilman ajanvarausta jo vuodesta 2012. Sijaitsemme Oulun sydämessä, tervetuloa kokeilemaan!',
       navigation: 'Navigointi',
       contact: 'Yhteystiedot',
       hours: 'Aukioloajat',
