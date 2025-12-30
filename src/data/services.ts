@@ -171,7 +171,7 @@ export const services: Service[] = [
     price: '€119.90',
     icon: Waves,
     image: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80',
-    category: 'Styling Services',
+    category: 'Salon Services',
   },
   {
     id: 'perm-long',
