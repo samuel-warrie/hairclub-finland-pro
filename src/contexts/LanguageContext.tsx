@@ -266,7 +266,7 @@ const translations = {
       featuredWork: 'Esittelyssä',
       ourShowcase: 'Näyttelyemme',
       followJourney: 'Seuraa meitä',
-      followDescription: 'Seuraa arkeamme Instagramissa. Löydät sieltä lisää valmiita töitä ja tyyli-inspiraatiota.',
+      followDescription: 'Seuraa arkeamme Instagramissa ja TikTokissa. Löydät sieltä lisää valmiita töitä ja tyyli-inspiraatiota.',
       previousSlide: 'Edellinen dia',
       nextSlide: 'Seuraava dia',
       pauseSlideshow: 'Keskeytä diaesitys',
