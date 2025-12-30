@@ -277,7 +277,7 @@ const translations = {
     },
     contact: {
       title: 'Ota Yhteyttä',
-      subtitle: 'Haluamme kuulla sinusta',
+      subtitle: 'Haluamme kuulla sinusta!',
       getInTouch: 'Ota Yhteyttä',
       visitShop: 'Vieraile liikkeessämme',
       description: 'Onko sinulla kysymyksiä? Olemme täällä auttamassa. Tule käymään tai ota yhteyttä.',
