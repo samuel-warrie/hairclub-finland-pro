@@ -2,7 +2,7 @@ export const galleryImages = [
   { id: 1, src: '/gallery-1.png', alt: 'Professional haircut and styling' },
   { id: 2, src: '/gallery-2.png', alt: 'Expert barber service' },
   { id: 3, src: '/gallery-3.png', alt: 'Modern hair styling' },
-  { id: 4, src: '/gallery-4.png', alt: 'Precision haircut' },
+  { id: 4, src: '/gallery-37.png', alt: 'Precision haircut' },
   { id: 5, src: '/gallery-5.png', alt: 'Professional grooming' },
   { id: 6, src: '/gallery-6.png', alt: 'Hair and beard styling' },
   { id: 7, src: '/gallery-7.png', alt: 'Expert barbering' },
@@ -24,7 +24,7 @@ export const galleryImages = [
   { id: 23, src: '/gallery-30.png', alt: 'Professional haircut' },
   { id: 24, src: '/gallery-34.png', alt: 'Hair styling expertise' },
   { id: 25, src: '/gallery-32.png', alt: 'Expert grooming service' },
-  { id: 28, src: '/gallery-37.png', alt: 'Professional grooming' },
+  { id: 28, src: '/gallery-4.png', alt: 'Professional grooming' },
   { id: 29, src: '/gallery-38.png', alt: 'Haircut and styling' },
   { id: 30, src: '/gallery-39.png', alt: 'Expert barbering' },
   { id: 31, src: '/gallery-40.png', alt: 'Modern hair service' },
@@ -36,4 +36,4 @@ export const galleryImages = [
   { id: 37, src: '/gallery-46.png', alt: 'Modern grooming service' },
 ];
 
-export const galleryPreview = galleryImages.slice(0, 4);
+export const galleryPreview = galleryImages.slice(0, 3);
