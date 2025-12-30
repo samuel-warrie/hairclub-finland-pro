@@ -231,7 +231,7 @@ const translations = {
     },
     services: {
       title: 'Palvelumme',
-      subtitle: 'Ammattimaiset parturi- ja kampaamopalvelut tyyliisi räätälöitynä',
+      subtitle: 'Ammattitaitoiset parturi- ja kampaamopalvelut räätälöitynä juuri sinulle',
       whatWeOffer: 'Tarjoamme',
       completeGrooming: 'Parturi- & kampaamopalvelut',
       description: 'Klassisista leikkauksista moderneihin tyyleihin ja värjäyksiin tarjoamme kattavan valikoiman ammattimaisia parturi- ja kampaamopalveluita. Selaa palveluitamme alta.',
