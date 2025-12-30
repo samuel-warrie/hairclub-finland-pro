@@ -180,7 +180,7 @@ export const services: Service[] = [
     price: '€169.90',
     icon: Waves,
     image: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80',
-    category: 'Styling Services',
+    category: 'Salon Services',
   },
   {
     id: 'head-massage',
