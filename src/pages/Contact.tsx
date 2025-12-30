@@ -103,7 +103,7 @@ const Contact = () => {
       <HeroBanner
         title={t('contact.title')}
         subtitle={t('contact.subtitle')}
-        image="/#413f3f_(2).jpg"
+        image="public/headers_bg.png"
       />
 
       {/* Contact Section */}
