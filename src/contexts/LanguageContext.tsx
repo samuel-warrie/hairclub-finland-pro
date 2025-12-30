@@ -123,7 +123,7 @@ const translations = {
       featuredWork: 'Featured Work',
       ourShowcase: 'Our Showcase',
       followJourney: 'Follow Us',
-      followDescription: 'Follow our daily lives on Instagram. You will find more finished work and style inspiration there.',
+      followDescription: 'Follow our daily lives on Instagram and Tiktok. You will find more finished work and style inspiration there.',
       previousSlide: 'Previous slide',
       nextSlide: 'Next slide',
       pauseSlideshow: 'Pause slideshow',
