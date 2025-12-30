@@ -226,7 +226,7 @@ const translations = {
       mondayFriday: 'Maanantai – Perjantai',
       saturdaySunday: 'Lauantai – Sunnuntai',
       closed: 'Suljettu',
-      walkIns: 'Ilman Ajanvarausta Tervetulleita',
+      walkIns: 'Tervetuloa ilman ajanvarausta.',
       walkInsDesc: 'Ei tarvi muuta?',
     },
     services: {
