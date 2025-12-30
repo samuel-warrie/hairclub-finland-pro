@@ -22,7 +22,7 @@ export const galleryImages = [
   { id: 23, src: '/gallery-27.png', alt: 'Expert barbering service' },
   { id: 24, src: '/gallery-29.png', alt: 'Modern hair styling' },
   { id: 25, src: '/gallery-30.png', alt: 'Professional haircut' },
-  { id: 26, src: '/gallery-31.png', alt: 'Hair styling expertise' },
+  { id: 26, src: '/gallery-34.png', alt: 'Hair styling expertise' },
   { id: 27, src: '/gallery-32.png', alt: 'Expert grooming service' },
   { id: 30, src: '/gallery-35.png', alt: 'Modern haircut service' },
   { id: 31, src: '/gallery-36.png', alt: 'Expert hair styling' },
