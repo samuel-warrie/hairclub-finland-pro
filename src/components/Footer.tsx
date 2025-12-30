@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Instagram, Facebook, CheckCircle2, AlertCircle, XCircle, Clock3, Phone } from 'lucide-react';
+import { MapPin, Clock, Instagram, Facebook, CheckCircle2, AlertCircle, XCircle, Clock3, Phone, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getBusinessStatus } from '@/lib/businessHours';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -108,6 +108,13 @@ const Footer = () => {
               >
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent flex-shrink-0 mt-0.5" />
                 <span>045 896 1423</span>
+              </a>
+              <a
+                href="mailto:hairclubfinland@gmail.com"
+                className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-primary-foreground/70 hover:text-accent transition-colors group"
+              >
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent flex-shrink-0 mt-0.5" />
+                <span>hairclubfinland@gmail.com</span>
               </a>
             </div>
           </div>

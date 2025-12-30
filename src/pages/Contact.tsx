@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Clock, Send, ArrowRight, Phone } from 'lucide-react';
+import { MapPin, Clock, Send, ArrowRight, Phone, Mail } from 'lucide-react';
 import { toast } from 'sonner';
 import HeroBanner from '@/components/HeroBanner';
 import { services } from '@/data/services';
@@ -166,6 +166,24 @@ const Contact = () => {
                     </h3>
                     <p className="text-muted-foreground text-sm">
                       045 896 1423
+                    </p>
+                  </div>
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:hairclubfinland@gmail.com"
+                  className="flex items-start gap-5 p-5 bg-secondary/50 border border-border/50 transition-all duration-300 hover:border-accent/30 hover:bg-secondary group"
+                >
+                  <div className="bg-accent w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-accent-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-heading text-lg font-medium mb-1 group-hover:text-accent transition-colors">
+                      {t('contact.email')}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      hairclubfinland@gmail.com
                     </p>
                   </div>
                 </a>
