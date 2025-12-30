@@ -115,7 +115,7 @@ const Index = () => {
                   HAIR
                 </span>
                 <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl uppercase">
-                  CLU
+                  CLUB
                 </span>
               </div>
               <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light tracking-[0.5em] uppercase">
