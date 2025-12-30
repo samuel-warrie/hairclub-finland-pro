@@ -28,7 +28,6 @@ const About = () => {
     <main>
       <HeroBanner
         title={t('about.ourStory')}
-        subtitle={t('about.subtitle')}
         image="/headers_bg.png"
       />
 
