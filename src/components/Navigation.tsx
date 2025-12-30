@@ -70,7 +70,7 @@ const Navigation = () => {
                 <span className={`text-[13px] font-medium tracking-wider uppercase transition-colors duration-300 ${
                   location.pathname === link.path
                     ? 'text-accent'
-                    : 'text-muted-foreground'
+                    : location.pathname === '/' ? 'text-muted-foreground' : 'text-accent'
                 }`}>
                   {link.name}
                 </span>
