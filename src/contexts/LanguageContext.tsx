@@ -228,7 +228,7 @@ const translations = {
       saturdaySunday: 'Lauantai – Sunnuntai',
       closed: 'Suljettu',
       walkIns: 'Tervetuloa ilman ajanvarausta.',
-      walkInsDesc: 'Ei tarvi muuta?',
+      walkInsDesc: 'Poikkea vain aukioloaikoina.',
     },
     services: {
       title: 'Palvelumme',
