@@ -36,4 +36,4 @@ export const galleryImages = [
   { id: 37, src: '/gallery-46.png', alt: 'Modern grooming service' },
 ];
 
-export const galleryPreview = galleryImages.slice(0, 3);
+export const galleryPreview = galleryImages.slice(0, 4);
