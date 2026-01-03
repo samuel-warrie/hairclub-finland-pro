@@ -246,7 +246,7 @@ const translations = {
       storyTitle: 'Hair Clubin Tarina',
       storyText1: 'Hair Club on hiusten leikkauksen laatuun, miellyttävään asiakaspalveluun ja saavutettavuuteen erikoistuva parturi-kampaamo. Olemme toimineet Oulussa vuodesta 2012 ja meille pääset aina myös ilman ajanvarausta. Tarjoamme monipuolisia parturi- ja kampaamopalveluita, ja asiakkaamme arvostavat meissä erityisesti aitoa läsnäoloa, ammattitaitoa, kokemusta ja kattavia palveluita.',
       storyText2: 'Tarinamme alkoi, kun Kasim Cevirel tuli Suomeen nuorena miehenä ja päätti kymmenen vuoden parturikampaajan kokemuksellaan perustaa ensimmäisen yrityksensä. Asiakkaat, jotka vielä tänäkin päivänä käyvät meillä, kannustivat ja olivat apuna yrityksen kasvattamisessa. Meiltä saa palveluita suomen- ja englanninkielellä. Hair Club on uudistunut ja kehittynyt jatkuvasti ja nykypäivänä Hair Club tarjoaa monipuolisia parturi-kampaamo palveluita useamman ammattilaisen toimesta.',
-      storyText3: 'Missään vaiheessa emme ole tinkineet palvelun laadusta, ystävällisestä asiakaspalvelusta tai rennosta kodinomaisesta tunnelmasta. Meille olet tervetulloa myös koko perheellä! Tutustu palveluihimme ja tule kokeilemaan Hair Clubin ainutlaatuinen palvelukokemusta.',
+      storyText3: 'Missään vaiheessa emme ole tinkineet palvelun laadusta, ystävällisestä asiakaspalvelusta tai rennosta kodinomaisesta tunnelmasta. Meille olet tervetullut myös koko perheellä! Tutustu palveluihimme ja tule kokemaan Hair Clubin ainutlaatuinen palvelukokemus.',
       whatDrivesUs: 'Mikä Meitä Ajaa',
       ourValues: 'Arvomme',
       excellence: 'Korkea laatu',
